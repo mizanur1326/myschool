@@ -4,14 +4,16 @@ $result = $db->query($sql);
 ?>
 <?php include_once("../includes/index_header.php");?>
 
-<body>
 <?php include_once("../includes/index_sidebar.php")?>
-            <div class="dashboard-content-one">
-                
-                <div class="m-5">
-                    <a href="add_teacher.php" class="btn btn-primary btn-lg">Add New Teacher</a>
-                </div>
 
+
+<body>
+    <div class="dashboard-content-one">
+        
+        <div class="m-5">
+            <a href="add_teacher.php" class="btn btn-primary btn-lg">Add New Teacher</a>
+        </div>
+        
                 <!-- Teacher Table Area Start Here -->
                 <div class="card height-auto">
                     <div class="card-body">
@@ -40,7 +42,7 @@ $result = $db->query($sql);
                                 <tbody>
                                     <?php while($row = $result->fetch_assoc()){?>
                                     <tr>
-                                        <td><?php echo $row["id"]?></td>
+                                        <td><?php echo $row["t_id"]?></td>
                                         <td><?php echo $row["name"]?></td>
                                         <td><?php echo $row["gender"]?></td>
                                         <td><?php echo $row["class"]?></td>
@@ -49,53 +51,19 @@ $result = $db->query($sql);
                                         <td><?php echo $row["phone"]?></td>
                                         <td><?php echo $row["email"]?></td>
                                         <td>
-                                            <a href="#" class="eud">Edit ||</a>
-                                            <a href="#" class="eud">Update ||</a>
-                                            <a href="#" class="eud">Delete</a>
+                                        <a href="edit_teacher.php?id=<?php echo $row["t_id"] ?>" class="eud">Edit ||</a>
+                                            <a href="delete_teacher.php?id=<?php echo $row["t_id"] ?>" class="eud">Delete</a>
                                         </td>
                                                                              
                                     </tr>
                                     <?php };?>
 
-                                    <!-- <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input">
-                                                <label class="form-check-label">#0022</label>
-                                            </div>
-                                        </td>
-                                        <td class="text-center"><img src="img/figure/student3.png" alt="student"></td>
-                                        <td>Jessia Rose</td>
-                                        <td>Female</td>
-                                        <td>1</td>
-                                        <td>Mathematics</td>
-                                        <td>A</td>
-                                        <td>59 Australia, Sydney</td>
-                                        <td>+ 123 9988568</td>
-                                        <td>kazifahim93@gmail.com</td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                    <span class="flaticon-more-button-of-three-dots"></span>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#"><i
-                                                            class="fas fa-times text-orange-red"></i>Close</a>
-                                                    <a class="dropdown-item" href="#"><i
-                                                            class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
-                                                    <a class="dropdown-item" href="#"><i
-                                                            class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr> -->
 
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
+                <?php include_once("../includes/index_footer.php")?>
                 
                 <!-- Teacher Table Area End Here -->
-                <?php include_once("../includes/index_footer.php")?>

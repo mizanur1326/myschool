@@ -27,7 +27,7 @@
                     <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Students</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
-                            <a href="all-student.html" class="nav-link"><i class="fas fa-angle-right"></i>All
+                            <a href="../admin/all_teachers.php" class="nav-link"><i class="fas fa-angle-right"></i>All
                                 Students</a>
                         </li>
 
@@ -46,12 +46,12 @@
                             class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
-                            <a href="all_teacher.php" class="nav-link"><i class="fas fa-angle-right"></i>All
+                            <a href="../admin/all_teacher.php" class="nav-link"><i class="fas fa-angle-right"></i>All
                                 Teachers</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="add-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                            <a href="../admin/add_teacher.php" class="nav-link"><i class="fas fa-angle-right"></i>Add
                                 Teacher</a>
                         </li>
 
@@ -83,3 +83,5 @@
         </div>
     </div>
     <!-- Sidebar Area End Here -->
+
+    
