@@ -7,11 +7,11 @@ $result = $db->query($sql);
 <body>
 <?php include_once("../includes/index_sidebar.php")?>
             <div class="dashboard-content-one">
-                <!-- Breadcubs Area Start Here -->
-                <div class="breadcrumbs-area">
-                    <h3>Teachers</h3>
+                
+                <div class="m-5">
+                    <a href="add_teacher.php" class="btn btn-primary btn-lg">Add New Teacher</a>
                 </div>
-                <!-- Breadcubs Area End Here -->
+
                 <!-- Teacher Table Area Start Here -->
                 <div class="card height-auto">
                     <div class="card-body">
@@ -49,9 +49,9 @@ $result = $db->query($sql);
                                         <td><?php echo $row["phone"]?></td>
                                         <td><?php echo $row["email"]?></td>
                                         <td>
-                                            <a href="#">Edit</a>
-                                            <a href="#">Update</a>
-                                            <a href="#">Delete</a>
+                                            <a href="#" class="eud">Edit ||</a>
+                                            <a href="#" class="eud">Update ||</a>
+                                            <a href="#" class="eud">Delete</a>
                                         </td>
                                                                              
                                     </tr>
@@ -96,5 +96,6 @@ $result = $db->query($sql);
                         </div>
                     </div>
                 </div>
+                
                 <!-- Teacher Table Area End Here -->
                 <?php include_once("../includes/index_footer.php")?>

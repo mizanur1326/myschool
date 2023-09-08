@@ -2086,6 +2086,7 @@ ul {
 /*=============== 5.5 Sidebar Menu ==================*/
 .sidebar-menu-one {
   width: 26rem;
+  height: 100%;
   position: fixed;
   top: 0;
   bottom: 0;
