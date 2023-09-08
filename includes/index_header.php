@@ -59,7 +59,7 @@
             </div>
             <div class="header-main-menu collapse navbar-collapse" id="mobile-navbar">
                 <ul class="navbar-nav">
-                    <li class="navbar-item header-search-bar">
+                    <!-- <li class="navbar-item header-search-bar">
                         <div class="input-group stylish-input-group">
                             <span class="input-group-addon">
                                 <button type="submit">
@@ -68,7 +68,7 @@
                             </span>
                             <input type="text" class="form-control" placeholder="Find Something . . .">
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
                 <ul class="navbar-nav">
                     <li class="navbar-item dropdown header-admin">

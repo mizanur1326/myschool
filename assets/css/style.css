@@ -4070,6 +4070,10 @@ ul {
   padding: 0 10px;
   color: #333333;
 }
+.fortable{
+  height: 400px;
+  width: 200px;
+}
 /*=============== 7.4 Dashboard Page Four ==================*/
 .dashboard-summery-two {
   margin-bottom: 30px;
@@ -4342,7 +4346,7 @@ ul {
 }
 /*=============== 8.3 Height ==================*/
 .height-auto {
-  height: auto !important;
+  /* height: auto !important; */
 }
 .m-height-580 {
   max-height: 58rem !important;
