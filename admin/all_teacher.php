@@ -30,8 +30,6 @@ $result = $db->query($sql);
                             <th>ID</th>
                             <th>Name</th>
                             <th>Gender</th>
-                            <th>Class</th>
-                            <th>Subject</th>
                             <th>Address</th>
                             <th>Phone</th>
                             <th>E-mail</th>
@@ -49,12 +47,6 @@ $result = $db->query($sql);
                                 </td>
                                 <td>
                                     <?php echo $row["gender"] ?>
-                                </td>
-                                <td>
-                                    <?php echo $row["class"] ?>
-                                </td>
-                                <td>
-                                    <?php echo $row["subject"] ?>
                                 </td>
                                 <td>
                                     <?php echo $row["address"] ?>
