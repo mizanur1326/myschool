@@ -27,7 +27,7 @@ $result = $db->query($sql);
                 <table class="table table-striped bg-white">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Teacher ID</th>
                             <th>Name</th>
                             <th>Gender</th>
                             <th>Address</th>
