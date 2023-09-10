@@ -77,7 +77,7 @@
                             class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Attendence</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
-                            <a href="all-class.php" class="nav-link"><i class="fas fa-angle-right"></i> All attendence </a>
+                            <a href="attendence.php" class="nav-link"><i class="fas fa-angle-right"></i> All attendence </a>
                         </li>
                         <li class="nav-item">
                             <a href="add-class.php" class="nav-link"><i class="fas fa-angle-right"></i> 
