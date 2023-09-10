@@ -63,11 +63,11 @@
                             class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
-                            <a href="all-class.html" class="nav-link"><i class="fas fa-angle-right"></i>All
+                            <a href="../admin/all_class.php" class="nav-link"><i class="fas fa-angle-right"></i>All
                                 Classes</a>
                         </li>
                         <li class="nav-item">
-                            <a href="add-class.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
+                            <a href="add_class.php" class="nav-link"><i class="fas fa-angle-right"></i>Add New
                                 Class</a>
                         </li>
                     </ul>
