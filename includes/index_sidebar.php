@@ -63,12 +63,25 @@
                             class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
-                            <a href="../admin/all_class.php" class="nav-link"><i class="fas fa-angle-right"></i>All
+                            <a href="all-class.html" class="nav-link"><i class="fas fa-angle-right"></i>All
                                 Classes</a>
                         </li>
                         <li class="nav-item">
-                            <a href="add_class.php" class="nav-link"><i class="fas fa-angle-right"></i>Add New
+                            <a href="add-class.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New
                                 Class</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item sidebar-nav-item">
+                    <a href="#" class="nav-link"><i
+                            class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Attendence</span></a>
+                    <ul class="nav sub-group-menu">
+                        <li class="nav-item">
+                            <a href="all-class.php" class="nav-link"><i class="fas fa-angle-right"></i> All attendence </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="add-class.php" class="nav-link"><i class="fas fa-angle-right"></i> 
+                                submit attendence</a>
                         </li>
                     </ul>
                 </li>
