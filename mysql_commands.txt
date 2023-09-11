@@ -1,0 +1,4 @@
+ ========= view  =======
+
+CREATE VIEW student_class_view AS
+ 	SELECT students.s_id, students.name as student_name, students.class as s_class, class.name as c_name FROM students, class  WHERE students.class  = class.name ;

@@ -26,8 +26,8 @@ $result = $db->query($sql);
 
 <?php while( $data = $result->fetch_assoc() ) :  ?>
     <tr>  
-    <td><?php  echo $data['Student_name']  ?> </td> 
-    <td><?php  echo $data['name']  ?>  </td>
+    <td><?php  echo $data['student_name']  ?> </td> 
+    <td><?php  echo $data['c_name']  ?>  </td>
     </tr>
 <?php endwhile ; ?>
 
