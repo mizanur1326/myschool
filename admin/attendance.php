@@ -1,3 +1,4 @@
+<?php include_once("../includes/db_config.php")?>
 <?php include_once("../includes/index_header.php")?>
 
 <body>
@@ -6,22 +7,20 @@
 
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
-                <div class="breadcrumbs-area">
-                    <h3>submit attendence</h3>
+                <div class="mt-5 mb-0">
+                    <h4>Select Class for Take Attendance</h4>
                 </div>
                 
-                <form action="">
+                <form action="" class="mt-0 mb-5">
                     <select id="st_id">
-                    <option value="">select class </option>
+                    <option value="">Select Class</option>
 
                     <?php 
-                    include("../includes/db_config.php");
-
                     $sql = "SELECT * FROM class";
                     $result = $db->query($sql);
                     while( $data = $result->fetch_assoc() ){
                     ?>
-                    <option value="<?php echo $data['s_id'] ?>"> <?php echo $data['name'] ?> </option>
+                    <option value="<?php echo $data['c_id'] ?>"> <?php echo $data['name'] ?> </option>
                     <?php  } ?>
                     </select>
                 </form>
@@ -32,17 +31,11 @@
                     $(function () {
                         $("#st_id").change( function() {
                             var st_id = $("#st_id").val() ;
-                            $.post("student_class.php", {id: st_id}, function (data , status) {
+                            $.post("attendance_sheet.php", {id:st_id}, function (data , status) {
                                 $("#class_list").html(data);
                             })
                         })
                     });
-                </script>
-
-
-                
-                
-
-
+                </script>                            
 
                 <?php include_once("../includes/index_footer.php")?>

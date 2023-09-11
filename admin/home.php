@@ -1,14 +1,11 @@
  <?php
-// session_start();
-// if(!isset($_POST['u_email'])){
-//     header("Location:index.php");
-// } 
+session_start();
+if(!isset($_SESSION['u_email'])){
+    header("Location:index.php");
+} 
 ?>
 
 <?php include_once("../includes/index_header.php")?>
-
-
-
 
 <body>
 
@@ -56,10 +53,6 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
                 <!-- Dashboard summery End Here -->
-
-
-                <?php include_once("../includes/index_footer.php")?>
+<?php include_once("../includes/index_footer.php")?>

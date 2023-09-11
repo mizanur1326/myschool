@@ -74,14 +74,14 @@
                 </li>
                 <li class="nav-item sidebar-nav-item">
                     <a href="#" class="nav-link"><i
-                            class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Attendence</span></a>
+                            class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Attendance</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
-                            <a href="attendence.php" class="nav-link"><i class="fas fa-angle-right"></i> All attendence </a>
+                            <a href="attendance.php" class="nav-link"><i class="fas fa-angle-right"></i>Take Attendance </a>
                         </li>
                         <li class="nav-item">
-                            <a href="submit_attendance.php" class="nav-link"><i class="fas fa-angle-right"></i> 
-                                submit attendence</a>
+                            <a href="#" class="nav-link"><i class="fas fa-angle-right"></i> 
+                                Attendance Report</a>
                         </li>
                     </ul>
                 </li>
