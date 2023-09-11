@@ -1,4 +1,14 @@
+ <?php
+// session_start();
+// if(!isset($_POST['u_email'])){
+//     header("Location:index.php");
+// } 
+?>
+
 <?php include_once("../includes/index_header.php")?>
+
+
+
 
 <body>
 

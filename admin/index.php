@@ -27,6 +27,12 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
+<?php
+if(isset($_SESSION['error'])){
+	echo $_SESSION['error'];
+	unset($_SESSION['error']);
+}
+?>
 <body style="background-color: #666666;">
 	
 	<div class="limiter">
