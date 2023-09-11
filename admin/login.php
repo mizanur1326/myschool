@@ -9,12 +9,13 @@ if(isset($_POST['submit'])){
     $row=$result->fetch_assoc();
     session_start();
     if($result->num_rows){
-
-    $_SESSION['u_email']=$row['email'];
     header("Location:home.php");
+    $_SESSION['u_email'] = $row['email'];
     }
+    
     else{
-        $_SESSION['error']="login Faild Please Try Again";
+        $_SESSION['error'] = "Email and Password does not store in the Database";
+
         header("Location:index.php");
     }
 

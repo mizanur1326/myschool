@@ -27,21 +27,26 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
-<?php
-if(isset($_SESSION['error'])){
-	echo $_SESSION['error'];
-	unset($_SESSION['error']);
-}
-?>
+
 <body style="background-color: #666666;">
 	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" action="login.php" method="post">
+				<?php
+				session_start();
+					if(isset($_SESSION['error'])){
+						echo $_SESSION['error'];
+						unset($_SESSION['error']);
+					}
+
+				?>
+					<div>
 					<span class="login100-form-title p-b-43">
 						Login to continue
 					</span>
+					</div>
 					
 					
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
