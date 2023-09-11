@@ -80,7 +80,7 @@
                             <a href="attendence.php" class="nav-link"><i class="fas fa-angle-right"></i> All attendence </a>
                         </li>
                         <li class="nav-item">
-                            <a href="add-class.php" class="nav-link"><i class="fas fa-angle-right"></i> 
+                            <a href="submit_attendance.php" class="nav-link"><i class="fas fa-angle-right"></i> 
                                 submit attendence</a>
                         </li>
                     </ul>

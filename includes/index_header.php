@@ -26,6 +26,11 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- Modernize js -->
     <script src="../assets/js/modernizr-3.6.0.min.js"></script>
+    <!-- jquery cdn  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    
 </head>
     <!-- Preloader Start Here -->
     <div id="preloader"></div>
