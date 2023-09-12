@@ -7,15 +7,16 @@ if(isset($_POST['submit'])){
     $sql ="SELECT email,password FROM admin_login  WHERE email='$email' AND password='$pass'";
     $result =$db->query($sql);
     $row=$result->fetch_assoc();
-    session_start();
+
     if($result->num_rows){
+    session_start();
     $_SESSION['u_email'] = $row['email'];
+    $_SESSION['welcome_msg'] = " Welcome To Myschool ";
     header("Location:home.php");
     }
     
     else{
         $_SESSION['error'] = "Email or Password Incorrect";
-
         header("Location:index.php");
     }
 

@@ -79,9 +79,9 @@
 			
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn submit" name="submit">
-							Login
-						</button>
+						<input class="login100-form-btn submit" value="LOGIN" type="submit" name="submit">
+							
+						</input>
 					</div>
 					
 					<div class="text-center p-t-46 p-b-20">
