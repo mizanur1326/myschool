@@ -8,8 +8,8 @@ if(isset($_POST['submit'])){
     $result =$db->query($sql);
     $row=$result->fetch_assoc();
 
-    if($result->num_rows){
     session_start();
+    if($result->num_rows){
     $_SESSION['u_email'] = $row['email'];
     $_SESSION['welcome_msg'] = " Welcome To Myschool ";
     header("Location:home.php");

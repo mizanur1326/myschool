@@ -1,3 +1,5 @@
+ 
+ <!-- check user validation -->
  <?php
     session_start();
     if (!isset($_SESSION['u_email'])) {
@@ -15,16 +17,18 @@
      <?php include_once("../includes/index_sidebar.php") ?>
 
      <div class="dashboard-content-one">
-         <!-- Breadcubs Area Start Here -->
          <div class="breadcrumbs-area">
              <h3>Admin Dashboard</h3>
          </div>
+
+         
+         <!--  login welcome message  -->
          <?php
             if (isset($_SESSION['welcome_msg'])) {
                 $welcome_msg = $_SESSION['welcome_msg'];
                 unset($_SESSION['welcome_msg']);
             ?>
-             <div class="alert alert-success p-5" id="welcome-alert" role="alert">
+             <div class="alert alert-success p-5 fw-bold" id="welcome-alert" role="alert">
                  <?php echo $welcome_msg ?>
              </div>
              <script>
@@ -33,7 +37,7 @@
                      if (welcomeAlert) {
                          welcomeAlert.style.display = 'none';
                      }
-                 }, 2000); // 3000 milliseconds (3 seconds)
+                 }, 3000); // 3000 milliseconds (3 seconds)
              </script>
          <?php
             }
