@@ -89,7 +89,7 @@ $result = $db->query($sql);
     </div>
 </div>
 
-?>
+
 
 
 <?php include_once("../includes/index_footer.php"); ?>
