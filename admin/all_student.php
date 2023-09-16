@@ -9,6 +9,12 @@ $result = $db->query($sql);
 ?>
 
 <?php include_once("../includes/index_header.php"); ?>
+<style>
+    #tableid {
+        height: 450px;
+        overflow: scroll;
+    }
+</style>
 
 <body>
     <?php include_once("../includes/index_sidebar.php"); ?>

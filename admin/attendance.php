@@ -28,11 +28,11 @@
 
             
                 <script>
-                    $(function () {
-                        $("#st_id").change( function() {
+                    jQuery(function () {
+                        jQuery("#st_id").change( function() {
                             var st_id = $("#st_id").val() ;
-                            $.post("attendance_sheet.php", {id:st_id}, function (data , status) {
-                                $("#class_list").html(data);
+                            jQuery.post("attendance_sheet.php", {id:st_id}, function (data , status) {
+                                jQuery("#class_list").html(data);
                             })
                         })
                     });
