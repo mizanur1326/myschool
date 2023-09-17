@@ -22,14 +22,25 @@ $result = $db->query($sql);
     <div class="dashboard-content-one">
         <!-- Breadcubs Area Start Here -->
         <div class="breadcrumbs-area">
-            <h3><a href="add_student.php" class="">Admission Form | Add New Student</a></h3>
+            <h3><a href="add_student.php" class="">Admission Form | Add New Student</a></h3>   
+            
+            <?php   if (isset( $_SESSION['delete_msg'] ) ){
+                $delete_msg  =  $_SESSION['delete_msg'];
+                unset ( $_SESSION['delete_msg'] );
+            } 
+            ?>
+            <div class="alert alert-danger p-5 fw-bold" id="welcome-alert" role="alert">
+                <?php echo $delete_msg?>
+            </div>
+ 
+
         </div>
         <!-- Breadcubs Area End Here -->
 
         <!-- Student Table Area Start Here -->
         <div class="card" id="tableid">
             <div class="card-body">
-                <h2>All Students List</h2>
+                <h2>All Students List</h2>     
                 <table class="table table-striped bg-white">
                     <thead>
                         <tr>

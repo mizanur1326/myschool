@@ -1,4 +1,3 @@
- 
  <!-- check user validation -->
  <?php
     session_start();
@@ -21,7 +20,7 @@
              <h3>Admin Dashboard</h3>
          </div>
 
-         
+
          <!--  login welcome message  -->
          <?php
             if (isset($_SESSION['welcome_msg'])) {
@@ -57,7 +56,7 @@
                          <div class="col-6">
                              <div class="item-content">
                                  <div class="item-title">Students</div>
-                                 <div class="item-number"><span class="counter" data-num="150000">1,50,000</span></div>
+                                 <div class="item-number"><span class="count counter">150000</span></div>
                              </div>
                          </div>
                      </div>
@@ -74,12 +73,27 @@
                          <div class="col-6">
                              <div class="item-content">
                                  <div class="item-title">Teachers</div>
-                                 <div class="item-number"><span class="counter" data-num="2250">2,250</span></div>
+                                 <div class="item-number"><span class="count counter">850</span></div>
                              </div>
                          </div>
                      </div>
                  </div>
              </div>
          </div>
+         <script>
+             $(function() {
+                 $('.count').each(function() {
+                     $(this).prop('Counter', 0).animate({
+                         Counter: $(this).text()
+                     }, {
+                         duration: 2000,
+                         easing: 'swing',
+                         step: function(now) {
+                             $(this).text(Math.ceil(now));
+                         }
+                     });
+                 });
+             });
+         </script>
          <!-- Dashboard summery End Here -->
          <?php include_once("../includes/index_footer.php") ?>

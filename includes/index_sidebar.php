@@ -3,7 +3,7 @@
     <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color" style="height: 100vh">
         <div class="mobile-sidebar-header d-md-none">
             <div class="header-logo">
-                <a href="home.php"><img src="../assets/img/logo1.png" alt="logo"></a>
+                <a href="/admin/home.php"><img src="../assets/img/logo1.png" alt="logo"></a>
             </div>
         </div>
         <div class="sidebar-menu-content">
@@ -86,7 +86,7 @@
                             <a href="attendance.php" class="nav-link"><i class="fas fa-angle-right"></i>Take Attendance </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link"><i class="fas fa-angle-right"></i> 
+                            <a href="attendance_sheet.php" class="nav-link"><i class="fas fa-angle-right"></i> 
                                 Attendance Report</a>
                         </li>
                     </ul>
