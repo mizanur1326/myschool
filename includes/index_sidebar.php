@@ -53,6 +53,12 @@
                         <li class="nav-item">
                             <a href="../admin/add_teacher.php" class="nav-link"><i class="fas fa-angle-right"></i>Add
                                 Teacher</a>
+                                <ul>
+                                <li class="nav-item">
+                            <a href="student-promotion.html" class="nav-link"><i class="fas fa-angle-right"></i>Student
+                                Promotion</a>
+                        </li>
+                                </ul>
                         </li>
 
                     </ul>
@@ -85,10 +91,27 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item sidebar-nav-item">
+                    <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Notice</span></a>
+                    <ul class="nav sub-group-menu">
+                        <li class="nav-item">
+                            <a href="../admin/all_notice_board.php" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                Notice</a>
+                        </li>
 
-                <li class="nav-item">
-                    <a href="notice-board.html" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
+                        
+                        <li class="nav-item">
+                            <a href="../admin/notice_entry.php" class="nav-link"><i class="fas fa-angle-right"></i>New Notice Add</a>
+                        </li>
+                    </ul>
                 </li>
+
+                <!-- <li class="nav-item">
+                    
+                <a href="../admin/all_notice_board.php" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
+                
+            </li> -->
+                   
                 <li class="nav-item">
                     <a href="messaging.html" class="nav-link"><i class="flaticon-chat"></i><span>Messeage</span></a>
                 </li>
