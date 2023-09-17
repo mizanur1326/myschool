@@ -3614,13 +3614,13 @@ ul {
   margin-bottom: 2px;
 }
 .dashboard-summery-one .item-content .item-number {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 500;
   color: #111111;
 }
 @media only screen and (max-width: 991px) {
   .dashboard-summery-one .item-content .item-number {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 .dashboard-card-one .card-body .earning-report {
@@ -3824,7 +3824,9 @@ ul {
   color: #a5a5a5;
   margin-bottom: 2px;
 }
-.dashboard-card-three .card-body .student-report .student-count .item-number {
+.dashboard-card-three .card-body .student-report .student-count .item-number 
+
+{
   font-size: 16px;
   color: #111111;
   font-weight: 500;
