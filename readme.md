@@ -35,6 +35,7 @@
 ##### Mizanur Rahman
 * DashBoard Customization
 * Student & Teacher CRUD 
+* Attendence 
 ##### Masum Hossain
 * Login Module
 * Implement Sessions
