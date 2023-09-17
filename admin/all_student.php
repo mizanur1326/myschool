@@ -24,14 +24,16 @@ $result = $db->query($sql);
         <div class="breadcrumbs-area">
             <h3><a href="add_student.php" class="">Admission Form | Add New Student</a></h3>   
             
+
+            <!-- delete message  -->
+            
             <?php   if (isset( $_SESSION['delete_msg'] ) ){
                 $delete_msg  =  $_SESSION['delete_msg'];
-                unset ( $_SESSION['delete_msg'] );
-            } 
-            ?>
+                ?>
             <div class="alert alert-danger p-5 fw-bold" id="welcome-alert" role="alert">
                 <?php echo $delete_msg?>
             </div>
+        <?php unset ( $_SESSION['delete_msg'] );   } ?>
  
 
         </div>
