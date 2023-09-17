@@ -2,3 +2,11 @@
 
 CREATE VIEW student_class_view AS
  	SELECT students.s_id, students.name as student_name, students.class as s_class, class.name as c_name FROM students, class  WHERE students.class  = class.name ;
+
+==========Foreign Key=========
+ALTER TABLE table_name ADD CONSTRAINT const_name FOREIGN KEY (col_name) REFERENCES ref_table_name(ref_table_col-name);
+
+-------------------------------
+ALTER TABLE student_class 
+ADD CONSTRAINT fK 
+FOREIGN KEY (s_id) REFERENCES students(s_id);
