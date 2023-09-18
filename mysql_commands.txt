@@ -10,3 +10,47 @@ ALTER TABLE table_name ADD CONSTRAINT const_name FOREIGN KEY (col_name) REFERENC
 ALTER TABLE student_class 
 ADD CONSTRAINT fK 
 FOREIGN KEY (s_id) REFERENCES students(s_id);
+
+
+
+================== student & class view  =====================
+
+select `sms_db`.`students`.`s_id` AS `s_id`,`sms_db`.`class`.`c_id` AS `c_id`,`sms_db`.`students`.`name` AS `student_name`,`sms_db`.`students`.`class` AS `s_class`,`sms_db`.`class`.`name` AS `c_name` from (`sms_db`.`students` join `sms_db`.`class`) where `sms_db`.`students`.`class` = `sms_db`.`class`.`name`
+
+
+
+
+================ account table raff ===============
+
+Student Fees Collection
+id - st_id - Name - class - Expense Type - Amount - status - date
+
+Expenses
+id - te_id - Name - Expense Type - Amount - status - date
+
+Add Expenses 
+te_id - name - Expense Type - Amount - status - date
+
+
+
+
+========== diagram query ==========
+
+ALTER TABLE expenses
+ADD CONSTRAINT fK_teacher_expenses_key 
+FOREIGN KEY (te_id) REFERENCES teachers(t_id);
+
+
+
+ALTER TABLE students
+ADD CONSTRAINT fK_students_class_key 
+FOREIGN KEY (class) REFERENCES class(c_id);
+
+
+
+ALTER TABLE student_fees_collection
+ADD CONSTRAINT fK_students_fees_key 
+FOREIGN KEY (st_id) REFERENCES students(s_id);
+
+
+

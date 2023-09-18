@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="../assets/css/all.min.css">
     <!-- Flaticon CSS -->
     <link rel="stylesheet" href="../assets/fonts/flaticon.css">
+    <!-- bootstrap icons  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <!-- Animate CSS -->
     <link rel="stylesheet" href="../assets/css/animate.min.css">
     <!-- Data Table CSS -->
@@ -40,7 +42,7 @@
         <div class="navbar navbar-expand-md header-menu-one bg-light">
             <div class="nav-bar-header-one">
                 <div class="header-logo">
-                    <a href="index.html">
+                    <a href="home.php">
                         <img src="../assets/img/logo.png" alt="logo">
                     </a>
                 </div>
