@@ -98,7 +98,11 @@ CREATE TABLE attendance_table (
 -------------------------------------------------
 INSERT INTO attendance_table (`st_id`, `st_name`, `st_class`) SELECT `s_id`, `name`, `class` FROM students;
 
+
+------------------------------------------------
+					 triggers 
 -------------------------------------------------
+
 trigger for students and attendance_table
 
 CREATE TRIGGER `after_students_insert` AFTER INSERT ON `students`
