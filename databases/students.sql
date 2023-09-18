@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2023 at 09:12 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- Generation Time: Sep 18, 2023 at 08:34 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,7 +37,7 @@ CREATE TABLE `students` (
   `phone` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `students`
@@ -51,7 +51,6 @@ INSERT INTO `students` (`s_id`, `name`, `class`, `gender`, `dob`, `address`, `ph
 (5, 'Jahin Anam', 5, 'Male', '1997-07-17', 'Narayanganj', '987 4562 1234', 'jahin@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
 (6, 'David', 1, 'Male', '2023-09-03', 'England', '(123) 456 7890', 'da@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
 (7, 'Mehedi Hasan', 2, 'Male', '2023-09-01', 'Kakrail', '456 789 0000', 'shuvo@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
-(8, 'Rana', 3, 'Male', '2023-09-14', 'Dhaka', '123456', 'aa@gmail.com', ''),
 (10, 'Ahad', 4, 'Male', '2023-09-14', 'Dhaka', '123456', 'ab@gmail.com', ''),
 (11, 'Ikbal', 5, 'Male', '2023-09-14', 'Dhaka', '123456', 'ac@gmail.com', ''),
 (12, 'Shuvo', 1, 'Male', '2023-09-14', 'Dhaka', '123456', 'ad@gmail.com', ''),
@@ -62,10 +61,15 @@ INSERT INTO `students` (`s_id`, `name`, `class`, `gender`, `dob`, `address`, `ph
 (17, 'Nadia', 1, 'Female', '2023-09-14', 'Dhaka', '123456', 'ai@gmail.com', ''),
 (18, 'Alauddin', 2, 'Male', '2023-09-14', 'Dhaka', '123456', 'aj@gmail.com', ''),
 (19, 'Rojoni', 3, 'Male', '2023-09-14', 'Dhaka', '123456', 'ak@gmail.com', ''),
-(20, 'Kamrul', 4, 'Male', '2023-09-14', 'Dhaka', '123456', 'al@gmail.com', ''),
-(21, 'Mahidul', 5, 'Male', '2023-09-14', 'Dhaka', '123456', 'am@gmail.com', ''),
-(22, 'Imran', 1, 'Male', '2023-09-14', 'Dhaka', '123456', 'an@gmail.com', ''),
-(23, 'Sakib', 1, 'Male', '2023-09-14', 'Dhaka', '123456', 'ao@gmail.com', '');
+(20, 'Kamrul', 4, 'Male', '2023-09-14', 'Dhaka', '123456', 'al@gmail.com', '');
+
+--
+-- Triggers `students`
+--
+DELIMITER $$
+CREATE TRIGGER `student_delete_trigger` AFTER DELETE ON `students` FOR EACH ROW DELETE FROM student_fees_collection WHERE st_id = OLD.s_id
+$$
+DELIMITER ;
 
 --
 -- Indexes for dumped tables
@@ -86,7 +90,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

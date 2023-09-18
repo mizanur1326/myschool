@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2023 at 07:39 PM
+-- Generation Time: Sep 18, 2023 at 08:18 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -122,7 +122,7 @@ INSERT INTO `books` (`id`, `book_name`, `subject`, `class`, `published`) VALUES
 
 CREATE TABLE `class` (
   `c_id` int(11) NOT NULL,
-  `name` tinyint(4) NOT NULL,
+  `name` int(11) NOT NULL,
   `c_teacher` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -206,6 +206,21 @@ INSERT INTO `expenses` (`id`, `te_id`, `te_name`, `expense_type`, `amount`, `sta
 (13, 13, 'Mary', 'salary', 15000, 'paid', '2023-09-20'),
 (14, 14, 'David', 'salary', 15000, 'paid', '2023-09-22'),
 (16, 33, 'Hashem', 'Salary', 30000, 'paid', '2023-09-21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `guide_teachers`
+--
+
+CREATE TABLE `guide_teachers` (
+  `id` int(11) NOT NULL,
+  `te_name` varchar(100) NOT NULL,
+  `te_id` int(11) NOT NULL,
+  `st_id` int(11) NOT NULL,
+  `st_name` varchar(100) NOT NULL,
+  `class` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -432,6 +447,12 @@ ALTER TABLE `expenses`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `guide_teachers`
+--
+ALTER TABLE `guide_teachers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `notice`
 --
 ALTER TABLE `notice`
@@ -502,6 +523,12 @@ ALTER TABLE `exam`
 --
 ALTER TABLE `expenses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `guide_teachers`
+--
+ALTER TABLE `guide_teachers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `notice`
