@@ -41,7 +41,26 @@ All Attendance
 
 
 ================ Library table raff ===============
+Add New Book
+id - Book_name - Subject - class - published
 
+All Book
+
+
+
+=================  Exam Table Raff =============
+Exam
+id - Exam_name - subject - class - date - time  
+
+All Exams
+
+
+================== class routine =====================
+Add class routine
+id - subject_name - class - te_id - te_name - time - date - day 
+
+show routines 
+teacher_routine_view
 
 
 ========== diagram query ==========

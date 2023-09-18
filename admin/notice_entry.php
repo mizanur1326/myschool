@@ -38,23 +38,23 @@
                 <!-- =====start From==== -->
                 <form class="new-added-form" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                     <div class="row">
-                        <div class="col-xl-3 form-group">
+                        <div class="col-xl-4 form-group">
                             <label>Title</label>
                             <input type="text" name="title" placeholder="Enter Your Notice Title" class="form-control">
                         </div>
-                         <div class="col-xl-3 form-group">
+                         <div class="col-xl-4 form-group">
                             <label> Notice Date</label>
                             <input type="date" name="dob" class="form-control">
                         </div>
-                        <div class="col-xl-3 form-group">
+                        <div class="col-xl-4 form-group">
                             <label>Posted By</label>
                             <input type="text" name="upload" class="form-control" placeholder="Notice Posted By">
-                        </div><br>
-                        <div class="col-xl-2 form-group">
-                            <label>Detailes</label>
-                            <textarea name="address" id="" cols="30" rows="10"  class="form-control"></textarea>
-                        </div>
+                        </div><br>                       
                      </div>
+                     <div class="form-group" >
+                            <label>Detailes</label>
+                            <textarea style="height: 300px;" name="address" id="" cols="30" rows="10"  class="form-control"></textarea>
+                        </div>
 
             <div class="row">
                         <div class="col-12 form-group mg-t-8">
