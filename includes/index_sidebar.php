@@ -90,6 +90,27 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="nav-item sidebar-nav-item">
+                    <a href="#" class="nav-link"><i class="bi bi-cash-coin"></i><span>Accounts</span></a>
+                    <ul class="nav sub-group-menu">
+                        <li class="nav-item">
+                            <a href="attendance.php" class="nav-link"><i class="fas fa-angle-right"></i>Show All Collections  </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="attendance_sheet.php" class="nav-link"><i class="fas fa-angle-right"></i> 
+                                Expenses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="attendance_sheet.php" class="nav-link"><i class="fas fa-angle-right"></i> 
+                                Add Collection</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="attendance_sheet.php" class="nav-link"><i class="fas fa-angle-right"></i> 
+                                Add Expenses</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item sidebar-nav-item">
                     <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Notice</span></a>
                     <ul class="nav sub-group-menu">
