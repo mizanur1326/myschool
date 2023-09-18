@@ -63,6 +63,11 @@ show routines
 teacher_routine_view
 
 
+=================== guide teacher ====================
+
+
+
+
 ========== diagram query ==========
 
 ALTER TABLE expenses
@@ -94,10 +99,27 @@ CREATE TABLE attendance_table (
 INSERT INTO attendance_table (`st_id`, `st_name`, `st_class`) SELECT `s_id`, `name`, `class` FROM students;
 
 -------------------------------------------------
+trigger for students and attendance_table
+
 CREATE TRIGGER `after_students_insert` AFTER INSERT ON `students`
  FOR EACH ROW INSERT INTO attendance_table SET
 	st_id = NEW.s_id,
 	st_name = NEW.name,
 	st_class = NEW.class;
 
+//( left side attendance_table ---- right side  students table)//
+
+
 -------------------------------------------------
+// trigger for students and student_fees_collection 
+
+CREATE TRIGGER `student_delete_trigger` AFTER DELETE ON `students`
+ FOR EACH ROW DELETE FROM student_fees_collection WHERE st_id = OLD.s_id
+
+---------------------------------------------------
+
+
+// trigger for teacher and expenses 
+
+CREATE TRIGGER `teacher_delete_after` AFTER DELETE ON `teachers`
+ FOR EACH ROW DELETE FROM expenses WHERE te_id = OLD.t_id
