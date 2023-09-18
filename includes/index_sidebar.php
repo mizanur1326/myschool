@@ -3,7 +3,7 @@
     <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color" style="height: 100vh">
         <div class="mobile-sidebar-header d-md-none">
             <div class="header-logo">
-                <a href="/admin/home.php"><img src="../assets/img/logo1.png" alt="logo"></a>
+                <a href="/admin/home.php"><img src="../assets/img/logo.png" alt="logo"></a>
             </div>
         </div>
         <div class="sidebar-menu-content">
