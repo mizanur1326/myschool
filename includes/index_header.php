@@ -35,40 +35,48 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <style>
+        /* ====  new css =====  */
+        .logo_img {
+            width: 80px;
+        }
+    </style>
+
 </head>
-    <!-- Preloader Start Here -->
-    <!-- <div id="preloader"></div> -->
-    <!-- Preloader End Here -->
-    <div id="wrapper" class="wrapper bg-ash">
-       <!-- Header Menu Area Start Here -->
-        <div class="navbar navbar-expand-md header-menu-one bg-light">
-            <div class="nav-bar-header-one">
-                <div class="header-logo">
-                    <a href="home.php">
-                        <img src="../assets/img/logo.png" alt="logo">
-                    </a>
-                </div>
-                 <div class="toggle-button sidebar-toggle">
-                    <button type="button" class="item-link">
-                        <span class="btn-icon-wrap">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </button>
-                </div>
+<!-- Preloader Start Here -->
+<!-- <div id="preloader"></div> -->
+<!-- Preloader End Here -->
+<div id="wrapper" class="wrapper bg-ash">
+    <!-- Header Menu Area Start Here -->
+    <div class="navbar navbar-expand-md header-menu-one bg-light">
+        <div class="nav-bar-header-one">
+            <div class="header-logo">
+                <a class="d-flex" href="home.php">
+                    <img class="logo_img" src="../assets/img/logo2.png" alt="logo">
+                    <h3 class="mt-5"> My School </h3>
+                </a>
             </div>
-            <div class="d-md-none mobile-nav-bar">
-               <button class="navbar-toggler pulse-animation" type="button" data-toggle="collapse" data-target="#mobile-navbar" aria-expanded="false">
-                    <i class="far fa-arrow-alt-circle-down"></i>
-                </button>
-                <button type="button" class="navbar-toggler sidebar-toggle-mobile">
-                    <i class="fas fa-bars"></i>
+            <div class="toggle-button sidebar-toggle">
+                <button type="button" class="item-link">
+                    <span class="btn-icon-wrap">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
                 </button>
             </div>
-            <div class="header-main-menu collapse navbar-collapse" id="mobile-navbar">
-                <ul class="navbar-nav">
-                    <!-- <li class="navbar-item header-search-bar">
+        </div>
+        <div class="d-md-none mobile-nav-bar">
+            <button class="navbar-toggler pulse-animation" type="button" data-toggle="collapse" data-target="#mobile-navbar" aria-expanded="false">
+                <i class="far fa-arrow-alt-circle-down"></i>
+            </button>
+            <button type="button" class="navbar-toggler sidebar-toggle-mobile">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="header-main-menu collapse navbar-collapse" id="mobile-navbar">
+            <ul class="navbar-nav">
+                <!-- <li class="navbar-item header-search-bar">
                         <div class="input-group stylish-input-group">
                             <span class="input-group-addon">
                                 <button type="submit">
@@ -78,36 +86,35 @@
                             <input type="text" class="form-control" placeholder="Find Something . . .">
                         </div>
                     </li> -->
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="navbar-item dropdown header-admin">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
-                            <div class="admin-title">
-                                <h5 class="item-title">Stevne Zone</h5>
-                                <span>Admin</span>
-                            </div>
-                            <div class="admin-img">
-                                <img src="../assets/img/figure/admin.jpg" alt="Admin">
-                            </div>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <div class="item-header">
-                                <h6 class="item-title">Steven Zone</h6>
-                            </div>
-                            <div class="item-content">
-                                <ul class="settings-list">
-                                    <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>
-                                    <li><a href="#"><i class="flaticon-list"></i>Task</a></li>
-                                    <li><a href="#"><i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a></li>
-                                    <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
-                                    <li><a href="logout.php"><i class="flaticon-turn-off"></i>Log Out</a></li>
-                                </ul>
-                            </div>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="navbar-item dropdown header-admin">
+                    <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        <div class="admin-title">
+                            <h5 class="item-title">Stevne Zone</h5>
+                            <span>Admin</span>
                         </div>
-                    </li>
+                        <div class="admin-img">
+                            <img src="../assets/img/figure/admin.jpg" alt="Admin">
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <div class="item-header">
+                            <h6 class="item-title">Steven Zone</h6>
+                        </div>
+                        <div class="item-content">
+                            <ul class="settings-list">
+                                <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>
+                                <li><a href="#"><i class="flaticon-list"></i>Task</a></li>
+                                <li><a href="#"><i class="flaticon-chat-comment-oval-speech-bubble-with-text-lines"></i>Message</a></li>
+                                <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
+                                <li><a href="logout.php"><i class="flaticon-turn-off"></i>Log Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
 
-                </ul>
-            </div>
+            </ul>
         </div>
-        <!-- Header Menu Area End Here -->
+    </div>
+    <!-- Header Menu Area End Here -->
