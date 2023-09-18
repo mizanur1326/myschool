@@ -82,4 +82,22 @@ ADD CONSTRAINT fK_students_fees_key
 FOREIGN KEY (st_id) REFERENCES students(s_id);
 
 
+-------------------------------------------------------
+CREATE TABLE attendance_table (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    st_id INT NOT NULL,
+    st_name VARCHAR(255) NOT NULL,
+    st_class VARCHAR(255) NOT NULL,
+	status VARCHAR(10) NOT NULL
+);
+-------------------------------------------------
+INSERT INTO attendance_table (`st_id`, `st_name`, `st_class`) SELECT `s_id`, `name`, `class` FROM students;
 
+-------------------------------------------------
+CREATE TRIGGER `after_students_insert` AFTER INSERT ON `students`
+ FOR EACH ROW INSERT INTO attendance_table SET
+	st_id = NEW.s_id,
+	st_name = NEW.name,
+	st_class = NEW.class;
+
+-------------------------------------------------

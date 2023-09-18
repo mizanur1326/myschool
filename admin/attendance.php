@@ -1,41 +1,74 @@
-<?php include_once("../includes/db_config.php")?>
-<?php include_once("../includes/index_header.php")?>
+<?php include_once("../includes/db_config.php");
+$sql = "SELECT * FROM attendance_table ";
+$result = $db->query($sql);
+?>
+<?php include_once("../includes/index_header.php"); ?>
+
+<?php include_once("../includes/index_sidebar.php") ?>
+<style>
+    #tableid {
+        height: 450px;
+        overflow: scroll;
+    }
+    #PA{
+        height: 30px;
+        font-size: 15px;
+    }
+</style>
 
 <body>
 
-<?php include_once("../includes/index_sidebar.php")?>
+    <?php include_once("../includes/index_sidebar.php") ?>
 
-            <div class="dashboard-content-one">
-                <!-- Breadcubs Area Start Here -->
-                <div class="mt-5 mb-0">
-                    <h4>Select Class for Take Attendance</h4>
+    <div class="dashboard-content-one">
+        <!-- Breadcubs Area Start Here -->
+        <div class="mt-5 mb-0">
+
+            <div class="card" id="tableid">
+                <div class="card-body">
+                    <h2>Take Attendance</h2>
+                    <table class="table table-striped bg-white">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Student Name</th>
+                                <th>Student Class</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while ($row = $result->fetch_assoc()) { ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $row["st_id"] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row["st_name"] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row["st_class"] ?>
+                                    </td>
+                                    <td>
+                                        <select class="form-control" name="check_AP" id="PA">
+                                            <option>Present</option>
+                                            <option>Absent</option>
+                                        </select>
+                                    </td>
+
+                                </tr>
+                            <?php }
+                            ; ?>
+
+
+                        </tbody>
+                    </table>
                 </div>
-                
-                <form action="" class="mt-0 mb-5">
-                    <select id="st_id">
-                    <option value="">Select Class</option>
 
-                    <?php 
-                    $sql = "SELECT * FROM class";
-                    $result = $db->query($sql);
-                    while( $data = $result->fetch_assoc() ){
-                    ?>
-                    <option value="<?php echo $data['c_id'] ?>"> <?php echo $data['name'] ?> </option>
-                    <?php  } ?>
-                    </select>
-                </form>
-                    <div id="class_list" ></div>
+            </div>
+        </div>
 
-            
-                <script>
-                    jQuery(function () {
-                        jQuery("#st_id").change( function() {
-                            var st_id = $("#st_id").val() ;
-                            jQuery.post("attendance_sheet.php", {id:st_id}, function (data , status) {
-                                jQuery("#class_list").html(data);
-                            })
-                        })
-                    });
-                </script>                            
 
-                <?php include_once("../includes/index_footer.php")?>
+
+
+
+        <?php include_once("../includes/index_footer.php") ?>
