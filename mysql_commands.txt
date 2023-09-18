@@ -32,6 +32,16 @@ Add Expenses
 te_id - name - Expense Type - Amount - status - date
 
 
+================ Attendance table raff ===============
+Submit Attendance
+id - st_id - st_name - st_class - status 
+
+All Attendance
+
+
+
+================ Library table raff ===============
+
 
 
 ========== diagram query ==========
