@@ -91,6 +91,19 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="nav-item sidebar-nav-item">
+                    <a href="#" class="nav-link"><i class="bi bi-person-check"></i><span>Routine</span></a>
+                    <ul class="nav sub-group-menu">
+                        <li class="nav-item">
+                            <a href="add_routine.php" class="nav-link"><i class="fas fa-angle-right"></i>Add Routine</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="class_routine.php" class="nav-link"><i class="fas fa-angle-right"></i> 
+                                View Routine</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item sidebar-nav-item">
                     <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Notice</span></a>
                     <ul class="nav sub-group-menu">
