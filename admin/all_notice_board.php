@@ -1,55 +1,80 @@
 <?php
-include_once("../includes/db_config.php") //Here is db connect//
+include_once("../includes/db_config.php"); // Include your database configuration file here
 
+// SQL query to retrieve all student data
+$sql = "SELECT * FROM notice";
+
+// Execute the query
+$result = $db->query($sql);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <?php include_once("../includes/index_header.php") ;?>
-</head>
+<?php include_once("../includes/index_header.php"); ?>
+<style>
+    #tableid {
+        height: 450px;
+        overflow: scroll;
+    }
+</style>
 
 <body>
-<div class="text-center mt-4 mb-2" >
-    <a class="btn btn-success" href="notice_entry.php">New Notice Add</a>
-</div>
-    <?php 
-    include_once("../includes/index_sidebar.php");
-    ?>
-    <table class="table table-primary table-striped">
-        <?php
-        $sql = "SELECT * FROM notice ";
-        $result = $db->query($sql);
-        ?>
-        <thead>
-            <tr>
-                <th>ID</th>
-               <th>Title</th>
-                <th>Date</th>
-                <th>Posted By</th>
-                <th>Details</th>
-            </tr>
-         
-        </thead>
-        <?php 
-            while($row=$result->fetch_assoc()):
-            ?>
-        <tr>
-            <td><?php echo $row['id'] ?></td>
-            <td><?php echo $row['title'] ?></td>
-            <td><?php echo $row['dob'] ?></td>
-            <td><?php echo $row['posted_by'] ?></td>
-            <td><?php echo $row['details'] ?></td>
-            <td><a href="notice_delete.php?id=<?php echo $row['id']?>"><i class="fa-solid fa-trash"></i></a></td>
-        </tr>
-        <?php endwhile ?>
-    </table>
-    <?php include("../includes/index_footer.php") ?>
+    <?php include_once("../includes/index_sidebar.php"); ?>
+
+    <div class="dashboard-content-one">
+        <!-- Breadcubs Area Start Here -->
+        <div class="breadcrumbs-area">
+            <h3><a href="notice_entry.php" class="">Notice Form | Add New Notice</a></h3>   
+            
+
+            <!-- delete message  -->
+            
+            <?php   if (isset( $_SESSION['delete_msg'] ) ){
+                $delete_msg  =  $_SESSION['delete_msg'];
+                ?>
+            <div class="alert alert-danger p-5 fw-bold" id="welcome-alert" role="alert">
+                <?php echo $delete_msg?>
+            </div>
+        <?php unset ( $_SESSION['delete_msg'] );   } ?>
+ 
+
+        </div>
+        <!-- Breadcubs Area End Here -->
+
+        <!-- Student Table Area Start Here -->
+        <div class="card" id="tableid">
+            <div class="card-body">
+                <h2>All Notice List</h2>     
+                <table class="table table-striped bg-white">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Notice Date</th>
+                            <th>Posted By</th>
+                            <th>Details</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($row = $result->fetch_assoc()) { ?>
+                            <tr>
+                                <td><?php echo $row["id"]; ?></td>
+                                <td><?php echo $row["title"]; ?></td>
+                                <td><?php echo $row["dob"]; ?></td>
+                                <td><?php echo $row["posted_by"]; ?></td>
+                                <td><?php echo $row["details"]; ?></td>
+                          <td>
+                         <a href="notice_delete.php?id=<?php echo $row["id"] ?>"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Student Table Area End Here -->
+
+        <?php include_once("../includes/index_footer.php"); ?>
+    </div>
 </body>
+
 </html>

@@ -90,10 +90,24 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item sidebar-nav-item">
+                    <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Notice</span></a>
+                    <ul class="nav sub-group-menu">
+                        <li class="nav-item">
+                            <a href="../admin/all_notice_board.php" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                Notice</a>
+                        </li>
 
-                <li class="nav-item">
-                    <a href="notice-board.html" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
+                        <li class="nav-item">
+                            <a href="../admin/notice_entry.php" class="nav-link"><i class="fas fa-angle-right"></i>Add New Notice</a>
+                        </li>
+                       
+                    </ul>
                 </li>
+
+                <!-- <li class="nav-item">
+                    <a href="notice-board.html" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
+                </li> -->
 
                 <!-- <li class="nav-item">
                     
