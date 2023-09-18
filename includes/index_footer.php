@@ -14,6 +14,10 @@
     <!-- Custom Js -->
     <script src="../assets/js/main.js"></script>
 
+    <script src="../assets/js/modernizr-3.6.0.min.js"></script>
+    <!--  -->
+    <script src="../assets/js/select2.min.js"></script>
+
 </body>
 
 </html>
