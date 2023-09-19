@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2023 at 03:36 PM
+-- Generation Time: Sep 19, 2023 at 07:03 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -36,6 +36,15 @@ CREATE TABLE `notice` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `notice`
+--
+
+INSERT INTO `notice` (`id`, `title`, `dob`, `posted_by`, `details`) VALUES
+(7, 'Eid Holiday', '2023-09-01', 'Mizanur Rahman', 'From 1st Sep 23 to 5th Sep 23 School will be closed due to EID.'),
+(8, 'Lorem', '2023-09-07', 'Mizanur Rahman', 'Off for HSC EXAM'),
+(9, 'Lorem', '2023-09-17', 'Mizanur Rahman', 'Holiday for SSC Exam');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -53,7 +62,7 @@ ALTER TABLE `notice`
 -- AUTO_INCREMENT for table `notice`
 --
 ALTER TABLE `notice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

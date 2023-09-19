@@ -57,4 +57,5 @@
 * Accounts Section
 * class Module
 * DB Diagram design 
-* Books Modules
+* Books Modules ( in process )
+* Documentation for Project
