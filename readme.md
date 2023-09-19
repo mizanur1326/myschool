@@ -31,6 +31,10 @@
 * Teacher Email: 
 * Teacher Password: 
 
+![alt text](http://url/to/sms_diagram.png)
+
+
+
 #### contributons:
 ##### Mizanur Rahman
 * DashBoard Customization
