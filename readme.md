@@ -31,7 +31,7 @@
 * Teacher Email: 
 * Teacher Password: 
 
-![alt text](http://url/to/sms_diagram.png)
+![sms diagram](sms_diagram.png)
 
 
 
