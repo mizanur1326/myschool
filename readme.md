@@ -6,6 +6,10 @@
 * add / edit / delete - Notice board
 * student attendence
 * Accounts Section - (Teacher's Salary & Student's fees )
+* Attendence Module
+* Routine Module
+* Exam Module
+* Class Module
 
 
 ## Technologies:  
@@ -44,7 +48,7 @@
 
 ##### Masum Hossain
 * Login Module
-* Implement Sessions
+* Implement Sessions 
 * Notice Module
 * Exam Module
 
@@ -52,3 +56,4 @@
 * Accounts Section
 * class Module
 * DB Diagram design 
+* Books 
