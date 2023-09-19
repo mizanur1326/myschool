@@ -10,6 +10,7 @@
 * Routine Module
 * Exam Module
 * Class Module
+* Books Module
 
 
 ## Technologies:  
@@ -56,4 +57,4 @@
 * Accounts Section
 * class Module
 * DB Diagram design 
-* Books 
+* Books Modules
