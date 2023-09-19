@@ -19,14 +19,16 @@
             <div class="card-body">
                 <div class="heading-layout1">
                     <div class="item-title">
-                        <h3>Add New Notice</h3>
+                        <h3>Add New Exam Schedule</h3>
                     </div>
                 </div>
                 <?php
-                 require_once("../includes/db_config.php");
                 if (isset($_POST["submit"])) {
                     extract($_POST);
-                $sql = "INSERT INTO notice VALUES(NULL, '$title', '$dob', '$upload', '$address')";
+                    
+                    require_once("../includes/db_config.php");
+
+                    $sql = "INSERT INTO exam VALUES(NULL, '$exam_name', '$subject', '$class', '$date', '$time')";
 
                     $db->query($sql);
 
@@ -35,30 +37,36 @@
                     }
                 }
                 ?>
-                <!-- =====start From==== -->
                 <form class="new-added-form" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                     <div class="row">
-                        <div class="col-xl-3 form-group">
-                            <label>Title</label>
-                            <input type="text" name="title" placeholder="Enter Your Notice Title" class="form-control">
+                        <div class="col-xl-4 form-group">
+                            <label>Exam_Name</label>
+                            <input type="text" name="exam_name" placeholder="Enter Exam Name" class="form-control">
                         </div>
-                         <div class="col-xl-3 form-group">
-                            <label> Notice Date</label>
-                            <input type="date" name="dob" class="form-control">
+                        <div class="col-xl-4 form-group">
+                            <label>Exam Subject</label>
+                            <input type="text" name="subject" placeholder="Enter Exam Subject" class="form-control">
                         </div>
-                        <div class="col-xl-3 form-group">
-                            <label>Posted By</label>
-                            <input type="text" name="upload" class="form-control" placeholder="Notice Posted By">
-                           
-                        </div><br>
-                        <div class="col-xl-3 form-group" >
-                            <label>Detailes</label>
-                            <textarea name="address" id="" cols="20" rows="10"  class="form-control"></textarea>
-                        </div>                       
-                     </div>
-                     
+                        <div class="col-xl-4 form-group">
+                            <label>Exam Class</label>
+                            <input type="text" name="class" class="form-control" placeholder="Enter Class Name">
+                        </div>
 
-            <div class="row">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-4 form-group ml-4">
+                            <label>Exam Date</label>
+                            <input type="date" name="date" placeholder="Enter Exam Date" class="form-control">
+                        </div>
+
+                        <div class="col-xl-4 form-group ml-2">
+                            <label> Exam Time</label>
+                            <input type="number" name="time" placeholder="Enter Exam Time" class="form-control">
+                        </div>
+                     </div>
+
+                    <div class="row mt-5">
                         <div class="col-12 form-group mg-t-8">
                             <button type="submit" name="submit"
                                 class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Submit</button>

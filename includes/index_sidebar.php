@@ -119,9 +119,19 @@
                     </ul>
                 </li>
 
-                <!-- <li class="nav-item">
-                    <a href="notice-board.html" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
-                </li> -->
+                <li class="nav-item sidebar-nav-item">
+                    <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>All Exam Schedule</span></a>
+                    <ul class="nav sub-group-menu">
+                        <li class="nav-item">
+                            <a href="../admin/all_exam_schedule.php" class="nav-link"><i class="fas fa-angle-right"></i>Exam Schedule </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="../admin/exam_entry_schedule.php" class="nav-link"><i class="fas fa-angle-right"></i>Add Exam Schedule</a>
+                        </li>
+                      
+                    </ul>
+                </li>
 
                 <!-- <li class="nav-item">
                     
