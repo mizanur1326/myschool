@@ -10,7 +10,7 @@
     <div class="dashboard-content-one">
         <!-- Breadcubs Area Start Here -->
         <div class="breadcrumbs-area">
-            <h3>Student Entry Form</h3>
+            <h3>Add Notice</h3>
 
         </div>
         <!-- Breadcubs Area End Here -->
