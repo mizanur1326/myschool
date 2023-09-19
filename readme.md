@@ -35,11 +35,17 @@
 ##### Mizanur Rahman
 * DashBoard Customization
 * Student & Teacher CRUD 
-* Attendence 
+* Attendence ( in process )
+* routine Module
+
+
 ##### Masum Hossain
 * Login Module
 * Implement Sessions
 * Notice Module
+* Exam Module
+
 ##### Khayrul Alam
 * Accounts Section
 * class Module
+* DB Diagram design 
