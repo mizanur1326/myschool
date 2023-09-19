@@ -26,14 +26,13 @@
 * admin Email: abc@gmail.com
 * admin Password: 123
 * DB name: sms_db
-* student Email: 
-* student password: 
-* Teacher Email: 
-* Teacher Password: 
 
+
+## UI Diagram For Database
 ![sms diagram](sms_diagram.png)
 
-
+## Database Tables
+![sms diagram](databases_table.png)
 
 #### contributons:
 ##### Mizanur Rahman
