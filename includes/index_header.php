@@ -52,7 +52,7 @@
         <div class="nav-bar-header-one">
             <div class="header-logo">
                 <a class="d-flex" href="home.php">
-                    <img class="logo_img" src="../assets/img/logo2.png" alt="logo">
+                    <img class="logo_img" src="../admin/assets/img/logo2.png" alt="logo">
                     <h3 class="mt-5"> My School </h3>
                 </a>
             </div>
