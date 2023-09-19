@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2023 at 08:34 PM
+-- Generation Time: Sep 18, 2023 at 08:09 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -24,46 +24,37 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `class`
+-- Table structure for table `guide_teachers`
 --
 
-CREATE TABLE `class` (
-  `c_id` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
-  `c_teacher` varchar(50) NOT NULL
+CREATE TABLE `guide_teachers` (
+  `id` int(11) NOT NULL,
+  `te_name` varchar(100) NOT NULL,
+  `te_id` int(11) NOT NULL,
+  `st_id` int(11) NOT NULL,
+  `st_name` varchar(100) NOT NULL,
+  `class` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `class`
---
-
-INSERT INTO `class` (`c_id`, `name`, `c_teacher`) VALUES
-(1, 1, 'Mark Willy'),
-(2, 2, 'Jessia Rose'),
-(3, 3, 'Thomas'),
-(4, 4, 'Daniel'),
-(5, 5, 'Martin');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `class`
+-- Indexes for table `guide_teachers`
 --
-ALTER TABLE `class`
-  ADD PRIMARY KEY (`c_id`),
-  ADD UNIQUE KEY `c_teacher` (`c_teacher`);
+ALTER TABLE `guide_teachers`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `class`
+-- AUTO_INCREMENT for table `guide_teachers`
 --
-ALTER TABLE `class`
-  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `guide_teachers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

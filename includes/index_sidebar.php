@@ -120,6 +120,29 @@
                 </li>
 
                 <li class="nav-item sidebar-nav-item">
+                    <a href="#" class="nav-link"><i class="bi bi-cash-coin"></i><span>Accounts</span></a>
+                    <ul class="nav sub-group-menu">
+                        <li class="nav-item">
+
+                            <a href="../admin/all_collections.php" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                Collections</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="../admin/all_expenses.php" class="nav-link"><i class="fas fa-angle-right"></i>Expenses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../admin/add_collection.php" class="nav-link"><i class="fas fa-angle-right"></i>Add Collections</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="../admin/add_expenses.php" class="nav-link"><i class="fas fa-angle-right"></i>Add Expenses</a>
+                        </li>
+                       
+                    </ul>
+                </li>
+
+                <li class="nav-item sidebar-nav-item">
                     <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>All Exam Schedule</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
