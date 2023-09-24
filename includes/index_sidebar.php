@@ -120,7 +120,7 @@
                 </li>
 
                 <li class="nav-item sidebar-nav-item">
-                    <a href="#" class="nav-link"><i class="bi bi-cash-coin"></i><span>Accounts</span></a>
+                    <a href="#" class="nav-link"><i class="bi bi-cash-coin"></i><span>Payments</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
 
