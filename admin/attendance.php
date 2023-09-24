@@ -1,5 +1,5 @@
 <?php include_once("../includes/db_config.php");
-$sql = "SELECT * FROM attendance_table ";
+$sql = "SELECT * FROM attendance_table";
 $result = $db->query($sql);
 ?>
 <?php include_once("../includes/index_header.php"); ?>

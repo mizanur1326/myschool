@@ -36,7 +36,7 @@
                                 Form</a>
                         </li>
                         <li class="nav-item">
-                            <a href="student-promotion.html" class="nav-link"><i class="fas fa-angle-right"></i>Student
+                            <a href="#" class="nav-link"><i class="fas fa-angle-right"></i>Student
                                 Promotion</a>
                         </li>
                     </ul>
@@ -53,12 +53,7 @@
                         <li class="nav-item">
                             <a href="../admin/add_teacher.php" class="nav-link"><i class="fas fa-angle-right"></i>Add
                                 Teacher</a>
-                                <ul>
-                                <li class="nav-item">
-                            <a href="student-promotion.html" class="nav-link"><i class="fas fa-angle-right"></i>Student
-                                Promotion</a>
-                        </li>
-                                </ul>
+
                         </li>
 
                     </ul>
@@ -83,10 +78,11 @@
                     <a href="#" class="nav-link"><i class="bi bi-person-check"></i><span>Attendance</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
-                            <a href="attendance.php" class="nav-link"><i class="fas fa-angle-right"></i>Take Attendance </a>
+                            <a href="attendance.php" class="nav-link"><i class="fas fa-angle-right"></i>Take Attendance
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="attendance_sheet.php" class="nav-link"><i class="fas fa-angle-right"></i> 
+                            <a href="#" class="nav-link"><i class="fas fa-angle-right"></i>
                                 Attendance Report</a>
                         </li>
                     </ul>
@@ -99,7 +95,7 @@
                             <a href="add_routine.php" class="nav-link"><i class="fas fa-angle-right"></i>Add Routine</a>
                         </li>
                         <li class="nav-item">
-                            <a href="class_routine.php" class="nav-link"><i class="fas fa-angle-right"></i> 
+                            <a href="class_routine.php" class="nav-link"><i class="fas fa-angle-right"></i>
                                 View Routine</a>
                         </li>
                     </ul>
@@ -108,14 +104,16 @@
                     <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Notice</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
-                            <a href="../admin/all_notice_board.php" class="nav-link"><i class="fas fa-angle-right"></i>All
+                            <a href="../admin/all_notice_board.php" class="nav-link"><i
+                                    class="fas fa-angle-right"></i>All
                                 Notice</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="../admin/notice_entry.php" class="nav-link"><i class="fas fa-angle-right"></i>Add New Notice</a>
+                            <a href="../admin/notice_entry.php" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                New Notice</a>
                         </li>
-                       
+
                     </ul>
                 </li>
 
@@ -124,34 +122,50 @@
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
 
-                            <a href="../admin/all_collections.php" class="nav-link"><i class="fas fa-angle-right"></i>All
+                            <a href="../admin/all_collections.php" class="nav-link"><i
+                                    class="fas fa-angle-right"></i>All
                                 Collections</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="../admin/all_expenses.php" class="nav-link"><i class="fas fa-angle-right"></i>Expenses</a>
+                            <a href="../admin/all_expenses.php" class="nav-link"><i
+                                    class="fas fa-angle-right"></i>Expenses</a>
                         </li>
                         <li class="nav-item">
-                            <a href="../admin/add_collection.php" class="nav-link"><i class="fas fa-angle-right"></i>Add Collections</a>
+                            <a href="../admin/add_collection.php" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                Collections</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="../admin/add_expenses.php" class="nav-link"><i class="fas fa-angle-right"></i>Add Expenses</a>
+                            <a href="../admin/add_expenses.php" class="nav-link"><i class="fas fa-angle-right"></i>Add
+                                Expenses</a>
                         </li>
-                       
+
                     </ul>
                 </li>
 
-                <!-- <li class="nav-item">
-                    <a href="notice-board.html" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
-                </li> -->
+                <li class="nav-item sidebar-nav-item">
+                    <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>All Exam Schedule</span></a>
+                    <ul class="nav sub-group-menu">
+                        <li class="nav-item">
+                            <a href="../admin/all_exam_schedule.php" class="nav-link"><i
+                                    class="fas fa-angle-right"></i>Exam Schedule </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="../admin/exam_entry_schedule.php" class="nav-link"><i
+                                    class="fas fa-angle-right"></i>Add Exam Schedule</a>
+                        </li>
+
+                    </ul>
+                </li>
 
                 <!-- <li class="nav-item">
                     
                 <a href="../admin/all_notice_board.php" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
                 
             </li> -->
-                   
+
                 <li class="nav-item">
                     <a href="messaging.html" class="nav-link"><i class="flaticon-chat"></i><span>Messeage</span></a>
                 </li>
@@ -159,5 +173,3 @@
         </div>
     </div>
     <!-- Sidebar Area End Here -->
-
-    

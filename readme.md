@@ -1,17 +1,25 @@
 # This is an School Management System Application
 
+## Live site link:
+https://project.devmrahman.com/admin/
+
 ## Features:  
 * admin / student / teacher - Login & sign up
 * add / edit / delete - teacher & student
 * add / edit / delete - Notice board
 * student attendence
 * Accounts Section - (Teacher's Salary & Student's fees )
+* Attendence Module
+* Routine Module
+* Exam Module
+* Class Module
+* Books Module
 
 
 ## Technologies:  
 * Html 5
 * CSS 3
-* Bootstrap 5
+* Bootstrap 4
 * PHP
 * mysql
 * jquery
@@ -26,20 +34,31 @@
 * admin Email: abc@gmail.com
 * admin Password: 123
 * DB name: sms_db
-* student Email: 
-* student password: 
-* Teacher Email: 
-* Teacher Password: 
+
+
+## UI Diagram For Database
+![sms diagram](sms_diagram.png)
+
+## Database Tables
+![sms diagram](databases_table.png)
 
 #### contributons:
 ##### Mizanur Rahman
 * DashBoard Customization
 * Student & Teacher CRUD 
-* Attendence 
+* Attendence ( in process )
+* routine Module
+
+
 ##### Masum Hossain
 * Login Module
-* Implement Sessions
+* Implement Sessions 
 * Notice Module
+* Exam Module
+
 ##### Khayrul Alam
 * Accounts Section
 * class Module
+* DB Diagram design 
+* Books Modules ( in process )
+* Documentation for Project
