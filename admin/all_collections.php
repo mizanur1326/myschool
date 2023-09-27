@@ -165,7 +165,7 @@ $result = $db->query($sql);
         </script>
 
         <!-- // Function to perform the status filter -->
-        <script>
+        <!-- <script>
             function filterTableByStatus() {
                 // Get the selected status from the dropdown
                 var selectedStatus = document.getElementById("statusFilter").value;
@@ -191,7 +191,7 @@ $result = $db->query($sql);
 
             // Add an event listener to the status dropdown
             document.getElementById("statusFilter").addEventListener("change", filterTableByStatus);
-        </script>
+        </script> -->
 
 
 
