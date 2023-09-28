@@ -42,8 +42,7 @@
                     </ul>
                 </li>
                 <li class="nav-item sidebar-nav-item">
-                    <a href="#" class="nav-link"><i
-                            class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
+                    <a href="#" class="nav-link"><i class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
                             <a href="../admin/all_teacher.php" class="nav-link"><i class="fas fa-angle-right"></i>All
@@ -60,8 +59,7 @@
                 </li>
 
                 <li class="nav-item sidebar-nav-item">
-                    <a href="#" class="nav-link"><i
-                            class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
+                    <a href="#" class="nav-link"><i class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Class</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
                             <a href="all_class.php" class="nav-link"><i class="fas fa-angle-right"></i>All
@@ -104,8 +102,7 @@
                     <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>Notice</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
-                            <a href="../admin/all_notice_board.php" class="nav-link"><i
-                                    class="fas fa-angle-right"></i>All
+                            <a href="../admin/all_notice_board.php" class="nav-link"><i class="fas fa-angle-right"></i>All
                                 Notice</a>
                         </li>
 
@@ -122,14 +119,12 @@
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
 
-                            <a href="../admin/all_collections.php" class="nav-link"><i
-                                    class="fas fa-angle-right"></i>All
+                            <a href="../admin/all_collections.php" class="nav-link"><i class="fas fa-angle-right"></i>All
                                 Collections</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="../admin/all_expenses.php" class="nav-link"><i
-                                    class="fas fa-angle-right"></i>Expenses</a>
+                            <a href="../admin/all_expenses.php" class="nav-link"><i class="fas fa-angle-right"></i>Expenses</a>
                         </li>
                         <li class="nav-item">
                             <a href="../admin/add_collection.php" class="nav-link"><i class="fas fa-angle-right"></i>Add
@@ -148,27 +143,34 @@
                     <a href="#" class="nav-link"><i class="flaticon-classmates"></i><span>All Exam Schedule</span></a>
                     <ul class="nav sub-group-menu">
                         <li class="nav-item">
-                            <a href="../admin/all_exam_schedule.php" class="nav-link"><i
-                                    class="fas fa-angle-right"></i>Exam Schedule </a>
+                            <a href="../admin/all_exam_schedule.php" class="nav-link"><i class="fas fa-angle-right"></i>Exam Schedule </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="../admin/exam_entry_schedule.php" class="nav-link"><i
-                                    class="fas fa-angle-right"></i>Add Exam Schedule</a>
+                            <a href="../admin/exam_entry_schedule.php" class="nav-link"><i class="fas fa-angle-right"></i>Add Exam Schedule</a>
                         </li>
 
                     </ul>
                 </li>
 
-                <!-- <li class="nav-item">
-                    
-                <a href="../admin/all_notice_board.php" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
-                
-            </li> -->
 
-                <li class="nav-item">
-                    <a href="messaging.html" class="nav-link"><i class="flaticon-chat"></i><span>Messeage</span></a>
+                <li class="nav-item sidebar-nav-item">
+                    <a href="#" class="nav-link"><i class="bi bi-file-earmark-spreadsheet"></i><span> Result </span></a>
+                    <ul class="nav sub-group-menu">
+                        <li class="nav-item">
+                            <a href="../admin/all_results.php" class="nav-link"><i class="fas fa-angle-right"></i>Show All Result </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="../admin/add_results.php" class="nav-link"><i class="fas fa-angle-right"></i>Add Result</a>
+                        </li>
+
+                    </ul>
                 </li>
+
+
+
+
             </ul>
         </div>
     </div>

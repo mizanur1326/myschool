@@ -20,7 +20,7 @@ select `sms_db`.`students`.`s_id` AS `s_id`,`sms_db`.`class`.`c_id` AS `c_id`,`s
 
 
 
-================ account table raff ===============
+================ payment table raff ===============
 
 Student Fees Collection
 id - st_id - Name - class - Expense Type - Amount - status - date
@@ -68,7 +68,12 @@ id - te_name - te_id - st_id - st_name - class
 
 
 
-========== diagram query ==========
+=================== Result =========================
+id - st_id - st_name - st_class - exam_name - marks - result 
+
+
+
+========== diagram querys ==========
 
 ALTER TABLE expenses
 ADD CONSTRAINT fK_teacher_expenses_key 
@@ -139,7 +144,12 @@ CREATE TABLE attendance_table (
 	status VARCHAR(10) NOT NULL
 );
 -------------------------------------------------
+
+=====================  save one table's data to another  ============================
+
 INSERT INTO attendance_table (`st_id`, `st_name`, `st_class`) SELECT `s_id`, `name`, `class` FROM students;
+   
+INSERT INTO result (`st_id`, `st_name`, `st_class`) SELECT `s_id`, `name`, `class` FROM students;
 
 
 ------------------------------------------------

@@ -1,36 +1,9 @@
-<!-- ====  collection backup =========
-
-<li class="nav-item sidebar-nav-item">
-                    <a href="#" class="nav-link"><i class="bi bi-cash-coin"></i><span>Accounts</span></a>
-                    <ul class="nav sub-group-menu">
-                        <li class="nav-item">
-
-                            <a href="../admin/all_collections.php" class="nav-link"><i class="fas fa-angle-right"></i>All
-                                Collections</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="../admin/all_expenses.php" class="nav-link"><i class="fas fa-angle-right"></i>Expenses</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../admin/add_collection.php" class="nav-link"><i class="fas fa-angle-right"></i>Add Collections</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="../admin/add_expenses.php" class="nav-link"><i class="fas fa-angle-right"></i>Add Expenses</a>
-                        </li>
-                       
-                    </ul>
-                </li>
-                
-==== ===============                
- -->
-
-
-<?php
+ <?php
 include_once("../includes/db_config.php");
-$sql = "SELECT * FROM student_fees_collection";
+$sql = "SELECT * FROM result";
 $result = $db->query($sql);
+$pass = "<p class='text-success font-weight-bold'> Pass </p>" ;
+$fail = "<p class='text-danger' font-weight-bold> Fail </p>" ;
 
 
 ?>
@@ -42,14 +15,11 @@ $result = $db->query($sql);
         overflow: scroll;
     }
 
-    #statusFilter{
-        width: 100px;
-    }
 
     .table-top {
         display: flex;
         gap: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     .green {
         background-color: green;
@@ -75,13 +45,13 @@ $result = $db->query($sql);
 
     <div class="dashboard-content-one">
         <div class="breadcrumbs-area">
-            <h3><a href="add_collection.php" class="">All Collection| Add Collection fees</a></h3>
+            <h3><a href="add_results.php" class="">All Results | Add Results </a></h3>
         </div>
 
         <!-- Collection Table Area Start Here -->
         <div class="card" id="tableid">
             <div class="card-body">
-                <h2>All Collections List</h2>
+                <h2>All Results</h2>
                 <div class="table-top">
 
                     <div class="input-group col-md-4">
@@ -95,8 +65,8 @@ $result = $db->query($sql);
 
                     <select id="statusFilter">
                         <option value="all">ALL</option>
-                        <option value="paid">Paid</option>
-                        <option value="unpaid">Unpaid</option>
+                        <option value="pass">Pass</option>
+                        <option value="fail">Fail</option>
                     </select>
 
                 </div>
@@ -107,30 +77,24 @@ $result = $db->query($sql);
                             <th>Student ID</th>
                             <th>Name</th>
                             <th>Class</th>
-                            <th>Fee Type</th>
-                            <th>Amount</th>
-                            <th>Status</th>
-                            <th>Date</th>
-                            <!-- <th>Action</th> -->
+                            <th>Exam name</th>
+                            <th>Marks</th>
+                            <th>Result</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php while ($row = $result->fetch_assoc()) { 
-                            
-                            // $status = $row["status"] ;
-                            // $paid = " <span class='btn btn-primary p-3 font-weight-bold text-white rounded-0'> $status </span> ";
-                            // $unpaid = " <span class='btn btn-danger p-3 font-weight-bold text-white rounded-0'> $status </span> ";
-                               
-                            ?>
+                        <?php while ($row = $result->fetch_assoc()) { ?>
                           
                             <tr>
                                 <td><?php echo $row["st_id"]; ?></td>
                                 <td><?php echo $row["st_name"]; ?></td>
-                                <td><?php echo $row["class"]; ?></td>
-                                <td><?php echo $row["expense_type"]; ?></td>
-                                <td><?php echo $row["amount"]; ?></td>
-                                <td><?php echo $row["status"]; ?></td>
-                                <td><?php echo $row['date']; ?></td>
+                                <td><?php echo $row["st_class"]; ?></td>
+                                <td><?php echo $row["exam_name"]; ?></td>
+                                <td><?php echo $row["marks"]; ?></td>
+                                <td> <?php echo $row["marks"] <= 33 ? $fail : $pass  ?>  </td>
+                                <td> <a class="bi bi-pencil-fill btn btn-primary p-3" href=""></a> </td>
+                                
 
 
                             </tr>
