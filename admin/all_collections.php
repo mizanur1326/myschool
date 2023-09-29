@@ -52,18 +52,14 @@ $result = $db->query($sql);
         margin-bottom: 30px;
     }
     .green {
-        background-color: green;
-        border-radius: 20px;
-        color: white;
+        color: green;
         font-weight: bold;
-        text-align: center;
+        
     }
     .red {
-        background-color: red;
-        border-radius: 20px;
-        color: white;
+        color: red;
         font-weight: bold;
-        text-align: center;
+        
     }
 
 </style>
@@ -129,7 +125,7 @@ $result = $db->query($sql);
                                 <td><?php echo $row["class"]; ?></td>
                                 <td><?php echo $row["expense_type"]; ?></td>
                                 <td><?php echo $row["amount"]; ?></td>
-                                <td><?php echo $row["status"]; ?></td>
+                                <td class="status-cell"><?php echo $row['status']; ?></td>
                                 <td><?php echo $row['date']; ?></td>
 
 
@@ -155,7 +151,7 @@ $result = $db->query($sql);
         // Loop through the rows
         rows.forEach(function (row) {
             var studentName = row.getElementsByTagName("td")[1]; // Assuming name is in the second column
-            var statusCell = row.getElementsByTagName("td")[5]; // Assuming status is in the sixth column
+            var statusCell = row.getElementsByClassName("status-cell")[0]; // Get the status cell by class
             var name = studentName.textContent.toLowerCase();
             var status = statusCell.textContent.toLowerCase();
 
@@ -164,6 +160,15 @@ $result = $db->query($sql);
 
             // Set the display style accordingly
             row.style.display = shouldDisplay ? "" : "none";
+            
+            // Apply background color based on status
+            if (status === 'paid') {
+                statusCell.classList.add("green");
+                statusCell.classList.remove("red");
+            } else {
+                statusCell.classList.add("red");
+                statusCell.classList.remove("green");
+            }
         });
     }
 
@@ -174,6 +179,7 @@ $result = $db->query($sql);
     // Initial filtering when the page loads
     filterTable();
 </script>
+
  
 
 

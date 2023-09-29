@@ -2,8 +2,7 @@
 include_once("../includes/db_config.php");
 $sql = "SELECT * FROM result";
 $result = $db->query($sql);
-$pass = "<p class='text-success font-weight-bold'> Pass </p>" ;
-$fail = "<p class='text-danger' font-weight-bold> Fail </p>" ;
+
 
 
 ?>
@@ -22,18 +21,14 @@ $fail = "<p class='text-danger' font-weight-bold> Fail </p>" ;
         margin-bottom: 20px;
     }
     .green {
-        background-color: green;
-        border-radius: 20px;
-        color: white;
+        color: green;
         font-weight: bold;
-        text-align: center;
+        
     }
     .red {
-        background-color: red;
-        border-radius: 20px;
-        color: white;
+        color: red;
         font-weight: bold;
-        text-align: center;
+        
     }
 
 </style>
@@ -86,15 +81,15 @@ $fail = "<p class='text-danger' font-weight-bold> Fail </p>" ;
                     <tbody>
                         <?php while ($row = $result->fetch_assoc()) { ?>
                           
-                            <tr>
-                                <td><?php echo $row["st_id"]; ?></td>
-                                <td><?php echo $row["st_name"]; ?></td>
-                                <td><?php echo $row["st_class"]; ?></td>
-                                <td><?php echo $row["exam_name"]; ?></td>
-                                <td><?php echo $row["marks"]; ?></td>
-                                <td> <?php echo $row["marks"] <= 33 ? $fail : $pass  ?>  </td>
-                                <td> <a class="bi bi-pencil-fill btn btn-primary p-3" href=""></a> </td>
-                                
+            <tr>
+                <td><?php echo $row["st_id"]; ?></td>
+                <td><?php echo $row["st_name"]; ?></td>
+                <td><?php echo $row["st_class"]; ?></td>
+                <td><?php echo $row["exam_name"]; ?></td>
+                <td><?php echo $row["marks"]; ?></td>
+                <td class="result <?php echo $row["result"] == 'Fail'? 'red' : 'green' ?>  " ><?php echo $row["result"]; ?></td>
+                <td> <a class="bi bi-pencil-fill btn btn-primary p-3" href=""></a> </td>
+                
 
 
                             </tr>
@@ -119,12 +114,12 @@ $fail = "<p class='text-danger' font-weight-bold> Fail </p>" ;
         // Loop through the rows
         rows.forEach(function (row) {
             var studentName = row.getElementsByTagName("td")[1]; // Assuming name is in the second column
-            var statusCell = row.getElementsByTagName("td")[5]; // Assuming status is in the sixth column
+            var resultCell = row.getElementsByClassName("result")[0]; // Assuming result is in the sixth column
             var name = studentName.textContent.toLowerCase();
-            var status = statusCell.textContent.toLowerCase();
+            var result = resultCell.textContent.toLowerCase();
 
             // Check if both conditions are met for displaying the row
-            var shouldDisplay = (selectedStatus === "all" || status === selectedStatus) && name.includes(input);
+            var shouldDisplay = (selectedStatus === "all" || result === selectedStatus) && name.includes(input);
 
             // Set the display style accordingly
             row.style.display = shouldDisplay ? "" : "none";
@@ -138,7 +133,6 @@ $fail = "<p class='text-danger' font-weight-bold> Fail </p>" ;
     // Initial filtering when the page loads
     filterTable();
 </script>
- 
 
 
 
