@@ -190,3 +190,13 @@ CREATE TRIGGER `teacher_delete_after` AFTER DELETE ON `teachers`
 	st_id = NEW.s_id,
 	st_name = NEW.name,
 	st_class = NEW.class ;
+
+
+============= To DO ===============
+
+1. Result, payments module - Edit
+2. Search and filtering for all module
+3. Books Module
+4. Trigger insert for students & collections { if ( 1 == true ) }
+4. Result, payments module - Delete ( optional )
+5. Notice Modal ( optional )
