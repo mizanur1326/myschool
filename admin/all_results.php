@@ -88,7 +88,9 @@ $result = $db->query($sql);
                 <td><?php echo $row["exam_name"]; ?></td>
                 <td><?php echo $row["marks"]; ?></td>
                 <td class="result <?php echo $row["result"] == 'Fail'? 'red' : 'green' ?>  " ><?php echo $row["result"]; ?></td>
-                <td> <a class="bi bi-pencil-fill btn btn-primary p-3" href=""></a> </td>
+
+                <td> <a class="bi bi-pencil-fill btn btn-primary p-3" href="result_edit.php?id=<?php echo $row['id'] ?>"></a> </td>
+
                 
 
 

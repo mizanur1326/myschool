@@ -180,3 +180,13 @@ CREATE TRIGGER `student_delete_trigger` AFTER DELETE ON `students`
 
 CREATE TRIGGER `teacher_delete_after` AFTER DELETE ON `teachers`
  FOR EACH ROW DELETE FROM expenses WHERE te_id = OLD.t_id
+
+
+
+ // trigger insert for students & results 
+
+ CREATE TRIGGER `result_students_insert` AFTER INSERT ON `students`
+ FOR EACH ROW INSERT INTO result SET
+	st_id = NEW.s_id,
+	st_name = NEW.name,
+	st_class = NEW.class ;

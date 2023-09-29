@@ -23,27 +23,40 @@
                     </div>
                 </div>
                 <?php
-                if (isset($_POST["submit"])) {
+                require_once("../includes/db_config.php");
+                $id = $_GET['id'];
+
+
+                $sql = " SELECT * FROM result WHERE id = '$id' ";
+                $result = $db->query($sql);
+                $data = $result->fetch_assoc();
+
+
+                if (isset($_POST['update'])) {
                     extract($_POST);
-                    require_once("../includes/db_config.php");
-                    $sql = "INSERT INTO result VALUES(NULL, '$st_id ','$name', '$class', '$exam_name', '$marks', '$result' )";
-
-                    $db->query($sql);
-
-                    if ($db->affected_rows) {
-                        echo "Info Successfully inserted";
-                    }
+                    $sql = "UPDATE result SET st_id = '$st_id', st_name = '$name', st_class = '$class', exam_name = '$exam_name', marks = '$marks', result = '$result' WHERE id = '$id'";
                 }
                 ?>
+
+
+
+
                 <form class="new-added-form" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+
+                <input  value=" <?php echo $data['id']  ?> " type="hidden" name="input_id" disabled >
+
                     <div class="row">
                         <div class="col-xl-4 form-group">
                             <label>Name</label>
-                            <input type="text" name="name" placeholder="Enter Students Name" class="form-control">
+                            <input type="text" name="name" placeholder="Enter Students Name" class="form-control"
+                            value="<?php echo $data['st_name'] ?>"
+                            >
                         </div>
                         <div class="col-xl-2 form-group">
                             <label>Student ID</label>
-                            <input type="number" name="st_id" placeholder="Enter Students ID" class="form-control">
+                            <input type="number" name="st_id" placeholder="Enter Students ID" class="form-control"
+                            value="<?php echo $data['st_id'] ?>"
+                            >
                         </div>
 
 
@@ -71,7 +84,9 @@
 
                         <div class="col-xl-3 form-group">
                             <label>Marks</label>
-                            <input type="number" name="marks" class="form-control">
+                            <input type="number" name="marks" class="form-control"
+                            value="<?php echo $data['marks'] ?>"
+                            >
                         </div>
 
                         <div class="col-xl-3 form-group">
@@ -88,7 +103,8 @@
 
                     <div class="row">
                         <div class="col-12 form-group mg-t-8">
-                            <button type="submit" name="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Submit</button>
+                            <button type="submit" name="update" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Update</button>
+
                             <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
                         </div>
                     </div>
