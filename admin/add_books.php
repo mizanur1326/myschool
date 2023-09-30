@@ -33,7 +33,7 @@ if (isset($_POST["submit"])) {
     extract($_POST);
     require_once("../includes/db_config.php");
 
-    $sql = "INSERT INTO student_fees_collection VALUES( NULL, '$st_id', '$st_name', '$class', '$fee_type', '$amount', '$paid', '$due' ,  '$status', '$date')";
+    $sql = "INSERT INTO books VALUES( NULL, '$book_name', '$subject', '$class', '$published')";
 
     $db->query($sql);
 
@@ -44,14 +44,14 @@ if (isset($_POST["submit"])) {
 ?>
                     <form class="new-added-form" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                     <div class="row">
-                        <div class="col-xl-2 form-group">
-                            <label>ID</label>
-                            <input type="text" name="st_id" placeholder="Enter student ID" class="form-control">
+                        <div class="col-xl-3 form-group">
+                            <label>Book Name</label>
+                            <input type="text" name="book_name" placeholder="Enter Book Name" class="form-control">
                         </div>
 
-                        <div class="col-xl-2 form-group">
-                            <label>Name</label>
-                            <input type="text" name="st_name" placeholder="Enter student Name" class="form-control">
+                        <div class="col-xl-3 form-group">
+                            <label>Subject</label>
+                            <input type="text" name="subject" placeholder="Enter Subject " class="form-control">
                         </div>
 
 
@@ -66,48 +66,10 @@ if (isset($_POST["submit"])) {
                                         <option value="5">5</option>
                                     </select>
                         </div>
-
-                        <div class="col-xl-2 form-group">
-                                    <label>Fee Type</label>
-                                    <select class="select2 dropdown-item" name="fee_type">
-                                        <option value="">Select one</option>
-                                        <option value="Exam">Exam fee</option>
-                                        <option value="Tution">Tution Fee</option>
-              
-                                    </select>
-                        </div>
-
-                       
-
                         
                         <div class="col-xl-3 form-group">
-                            <label>Amount</label>
-                            <input type="number" name="amount" class="form-control">
-                        </div>
-
-                        <div class="col-xl-3 form-group">
-                            <label>Paid Amount</label>
-                            <input type="number" name="paid" class="form-control">
-                        </div>
-                        <div class="col-xl-3 form-group">
-                            <label>Due Amount</label>
-                            <input type="number" name="due" class="form-control">
-                        </div>
-
-
-                        <div class="col-xl-2 form-group">
-                                    <label>Status</label>
-                                    <select class="select2 dropdown-item" name="status">
-                                        <option value="" >Select one</option>
-                                        <option value="paid">Paid</option>
-                                        <option value="due">Due</option>
-              
-                                    </select>
-                        </div>
-
-                        <div class="col-xl-3 form-group">
-                            <label>Date</label>
-                            <input type="date" name="date" class="form-control">
+                            <label>Published</label>
+                            <input type="date" name="published" class="form-control">
                         </div>
 
                     </div>

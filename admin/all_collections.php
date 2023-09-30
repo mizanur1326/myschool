@@ -92,7 +92,7 @@ $result = $db->query($sql);
                     <select id="statusFilter">
                         <option value="all">ALL</option>
                         <option value="paid">Paid</option>
-                        <option value="unpaid">Unpaid</option>
+                        <option value="due">Due</option>
                     </select>
 
                 </div>
@@ -105,6 +105,8 @@ $result = $db->query($sql);
                             <th>Class</th>
                             <th>Fee Type</th>
                             <th>Amount</th>
+                            <th>Paid</th>
+                            <th>Due</th>
                             <th>Status</th>
                             <th>Date</th>
                             <!-- <th>Action</th> -->
@@ -125,6 +127,8 @@ $result = $db->query($sql);
                                 <td><?php echo $row["class"]; ?></td>
                                 <td><?php echo $row["expense_type"]; ?></td>
                                 <td><?php echo $row["amount"]; ?></td>
+                                <td><?php echo $row["paid"]; ?></td>
+                                <td><?php echo $row["due"]; ?></td>
                                 <td class="status-cell"><?php echo $row['status']; ?></td>
                                 <td><?php echo $row['date']; ?></td>
 
