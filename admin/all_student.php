@@ -68,10 +68,10 @@ $result = $db->query($sql);
                                 <td><?php echo $row["address"]; ?></td>
                                 <td><?php echo $row["phone"]; ?></td>
                                 <td><?php echo $row["email"]; ?></td>
-                                <td>
-                                    <a href="edit_student.php?id=<?php echo $row["s_id"] ?>" >Edit ||</a>
-                                    <a href="delete_student.php?id=<?php echo $row["s_id"] ?>" >Delete</a>
-                                </td>
+<td>
+<a href="edit_student.php?id=<?php echo $row["s_id"] ?>" >Edit ||</a>
+<a href="delete_student.php?id=<?php echo $row["s_id"] ?>" >Delete</a>
+</td>
                             </tr>
                         <?php } ?>
                     </tbody>

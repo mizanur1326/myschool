@@ -24,10 +24,10 @@
                 </div>
                 <?php
                 require_once("../includes/db_config.php");
-                $id = $_GET['id'];
+                $id = $_REQUEST['id'];
+                // url id
 
-
-                $sql = " SELECT * FROM result WHERE id = '$id' ";
+                $sql = "SELECT * FROM result WHERE id = '$id' ";
                 $result = $db->query($sql);
                 $data = $result->fetch_assoc();
 
@@ -43,7 +43,8 @@
 
                 <form class="new-added-form" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
 
-                <input  value=" <?php echo $data['id']  ?> " type="hidden" name="input_id" disabled >
+                <input  value=" <?php echo $data['id']  ?> " type="" name="id">
+                <!--    -->
 
                     <div class="row">
                         <div class="col-xl-4 form-group">
