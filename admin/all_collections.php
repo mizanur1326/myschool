@@ -42,7 +42,7 @@ $result = $db->query($sql);
         overflow: scroll;
     }
 
-    #statusFilter{
+    #statusFilter {
         width: 100px;
     }
 
@@ -51,17 +51,18 @@ $result = $db->query($sql);
         gap: 30px;
         margin-bottom: 30px;
     }
+
     .green {
         color: green;
         font-weight: bold;
-        
+
     }
+
     .red {
         color: red;
         font-weight: bold;
-        
-    }
 
+    }
 </style>
 
 </style>
@@ -81,7 +82,7 @@ $result = $db->query($sql);
                 <div class="table-top">
 
                     <div class="input-group col-md-4">
-                    <input class="p-2" type="text" id="searchInput" placeholder="Search for a student...">
+                        <input class="p-2" type="text" id="searchInput" placeholder="Search for a student...">
                         <span class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button">
                                 <i class="fa fa-search"></i>
@@ -90,9 +91,26 @@ $result = $db->query($sql);
                     </div>
 
                     <select id="statusFilter">
-                        <option value="all">ALL</option>
+                        <option value="all">Status</option>
                         <option value="paid">Paid</option>
                         <option value="due">Due</option>
+                    </select>
+
+
+                    <select id="monthFilter">
+                        <option value="all">Select Month</option>
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="Aug">Aug</option>
+                        <option value="Sept">Sept</option>
+                        <option value="Oct">Oct</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dec">Dec</option>
                     </select>
 
                 </div>
@@ -104,6 +122,7 @@ $result = $db->query($sql);
                             <th>Name</th>
                             <th>Class</th>
                             <th>Fee Type</th>
+                            <th>Month</th>
                             <th>Amount</th>
                             <th>Paid</th>
                             <th>Due</th>
@@ -113,19 +132,15 @@ $result = $db->query($sql);
                         </tr>
                     </thead>
                     <tbody>
-                        <?php while ($row = $result->fetch_assoc()) { 
-                            
-                            // $status = $row["status"] ;
-                            // $paid = " <span class='btn btn-primary p-3 font-weight-bold text-white rounded-0'> $status </span> ";
-                            // $unpaid = " <span class='btn btn-danger p-3 font-weight-bold text-white rounded-0'> $status </span> ";
-                               
-                            ?>
-                          
+                        <?php while ($row = $result->fetch_assoc()) {
+                        ?>
+
                             <tr>
                                 <td><?php echo $row["st_id"]; ?></td>
                                 <td><?php echo $row["st_name"]; ?></td>
                                 <td><?php echo $row["class"]; ?></td>
                                 <td><?php echo $row["expense_type"]; ?></td>
+                                <td><?php echo $row["month"]; ?></td>
                                 <td><?php echo $row["amount"]; ?></td>
                                 <td><?php echo $row["paid"]; ?></td>
                                 <td><?php echo $row["due"]; ?></td>
@@ -144,27 +159,33 @@ $result = $db->query($sql);
         <!-- Function to perform the search -->
         <script>
     function filterTable() {
-        // Get the input value and selected status
+        // Get the input value, selected status, and selected month
         var input = document.getElementById("searchInput").value.toLowerCase();
         var selectedStatus = document.getElementById("statusFilter").value;
+        var selectedMonth = document.getElementById("monthFilter").value;
 
         // Get the table and rows
         var table = document.querySelector(".table");
         var rows = table.querySelectorAll("tbody tr");
 
         // Loop through the rows
-        rows.forEach(function (row) {
+        rows.forEach(function(row) {
             var studentName = row.getElementsByTagName("td")[1]; // Assuming name is in the second column
             var statusCell = row.getElementsByClassName("status-cell")[0]; // Get the status cell by class
+            var monthCell = row.getElementsByTagName("td")[4]; // Assuming month is in the fifth column
+
             var name = studentName.textContent.toLowerCase();
             var status = statusCell.textContent.toLowerCase();
+            var month = monthCell.textContent;
 
-            // Check if both conditions are met for displaying the row
-            var shouldDisplay = (selectedStatus === "all" || status === selectedStatus) && name.includes(input);
+            // Check if all three conditions are met for displaying the row
+            var shouldDisplay = (selectedStatus === "all" || status === selectedStatus) &&
+                (selectedMonth === "all" || month === selectedMonth) &&
+                name.includes(input);
 
             // Set the display style accordingly
             row.style.display = shouldDisplay ? "" : "none";
-            
+
             // Apply background color based on status
             if (status === 'paid') {
                 statusCell.classList.add("green");
@@ -176,15 +197,17 @@ $result = $db->query($sql);
         });
     }
 
-    // Add event listener to both search input and status dropdown
+    // Add event listener to both search input, status dropdown, and month dropdown
     document.getElementById("searchInput").addEventListener("input", filterTable);
     document.getElementById("statusFilter").addEventListener("change", filterTable);
+    document.getElementById("monthFilter").addEventListener("change", filterTable);
 
     // Initial filtering when the page loads
     filterTable();
 </script>
 
- 
+
+
 
 
 

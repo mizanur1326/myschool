@@ -33,7 +33,7 @@ if (isset($_POST["submit"])) {
     extract($_POST);
     require_once("../includes/db_config.php");
 
-    $sql = "INSERT INTO student_fees_collection VALUES( NULL, '$st_id', '$st_name', '$class', '$fee_type', '$amount', '$paid', '$due' ,  '$status', '$date')";
+    $sql = "INSERT INTO student_fees_collection VALUES( NULL, '$st_id', '$st_name', '$class', '$fee_type', '$month', '$amount', '$paid', '$due' ,  '$status', '$date')";
 
     $db->query($sql);
 
@@ -49,7 +49,7 @@ if (isset($_POST["submit"])) {
                             <input type="text" name="st_id" placeholder="Enter student ID" class="form-control">
                         </div>
 
-                        <div class="col-xl-2 form-group">
+                        <div class="col-xl-3 form-group">
                             <label>Name</label>
                             <input type="text" name="st_name" placeholder="Enter student Name" class="form-control">
                         </div>
@@ -77,6 +77,26 @@ if (isset($_POST["submit"])) {
                                     </select>
                         </div>
 
+                        <div class="col-xl-2 form-group">
+                                    <label>Month</label>
+                                    <select class="select2 dropdown-item" name="month">
+                                        <option value="">Select one</option>
+                                        <option value="Jan">Jan</option>
+                                        <option value="Feb">Feb</option>
+                                        <option value="March">March</option>
+                                        <option value="April">April</option>
+                                        <option value="May">May</option>
+                                        <option value="June">June</option>
+                                        <option value="July">July</option>
+                                        <option value="Aug">Aug</option>
+                                        <option value="Sept">Sept</option>
+                                        <option value="Oct">Oct</option>
+                                        <option value="Nov">Nov</option>
+                                        <option value="Dec">Dec</option>
+              
+                                    </select>
+                        </div>
+
                        
 
                         
@@ -85,11 +105,11 @@ if (isset($_POST["submit"])) {
                             <input type="number" name="amount" class="form-control">
                         </div>
 
-                        <div class="col-xl-3 form-group">
+                        <div class="col-xl-2 form-group">
                             <label>Paid Amount</label>
                             <input type="number" name="paid" class="form-control">
                         </div>
-                        <div class="col-xl-3 form-group">
+                        <div class="col-xl-2 form-group">
                             <label>Due Amount</label>
                             <input type="number" name="due" class="form-control">
                         </div>
