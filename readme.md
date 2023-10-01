@@ -55,10 +55,11 @@ https://project.devmrahman.com/admin/
 * Implement Sessions 
 * Notice Module
 * Exam Module
+* Books Modules ( in process )
 
 ##### Khayrul Alam
-* Accounts Section
+* payment Section
+* Exam Module
 * class Module
 * DB Diagram design 
-* Books Modules ( in process )
 * Documentation for Project

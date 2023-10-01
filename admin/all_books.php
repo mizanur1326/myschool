@@ -53,7 +53,7 @@ $result = $db->query($sql);
                 <div class="table-top">
 
                     <div class="input-group col-md-4">
-                        <input class="p-2" type="text" id="searchInput" placeholder="Search for a student...">
+                        <input class="p-2" type="text" id="searchInput" placeholder="Search for a Book">
                         <span class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button">
                                 <i class="fa fa-search"></i>

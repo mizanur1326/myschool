@@ -24,14 +24,28 @@ $result = $db->query($sql);
     <div class="dashboard-content-one">
         <!-- Breadcubs Area Start Here -->
         <div class="breadcrumbs-area">
-           
+
         </div>
         <!-- Breadcubs Area End Here -->
 
         <!-- Student Table Area Start Here -->
         <div class="card" id="tableid">
+
+
+
             <div class="card-body">
-                <h2>Class Routine</h2>     
+                <h2>Class Routine</h2>
+                <div class="class-filter">
+                    <label for="classFilter">Filter by Class:</label>
+                    <select id="classFilter">
+                        <option value="all">All Classes</option>
+                        <option value="1">Class 1</option>
+                        <option value="2">Class 2</option>
+                        <option value="3">Class 3</option>
+                        <option value="4">Class 4</option>
+                        <option value="5">Class 5</option>
+                    </select>
+                </div>
                 <table class="table table-striped bg-white">
                     <thead>
                         <tr>
@@ -62,5 +76,36 @@ $result = $db->query($sql);
 
         <?php include_once("../includes/index_footer.php"); ?>
     </div>
+    <script>
+        function filterTable() {
+            // Get the selected class from the dropdown
+            var selectedClass = document.getElementById("classFilter").value;
 
-        <?php //include_once("../includes/index_footer.php") ?>
+            // Get the table and rows
+            var table = document.querySelector(".table");
+            var rows = table.querySelectorAll("tbody tr");
+
+            // Loop through the rows
+            rows.forEach(function(row) {
+                var classCell = row.getElementsByTagName("td")[2]; // Assuming class is in the third column
+                
+                var classValue = classCell.textContent;
+
+                // Check if the class matches the selected class or if "All Classes" is selected
+                var shouldDisplay = (selectedClass === "all" || classValue === "Class " + selectedClass);
+
+                // Set the display style accordingly
+                row.style.display = shouldDisplay ? "" : "none";
+            });
+        }
+
+        // Add event listener to the class filter dropdown
+        document.getElementById("classFilter").addEventListener("change", filterTable);
+
+        // Initial filtering when the page loads
+        filterTable();
+    </script>
+
+
+    <?php //include_once("../includes/index_footer.php") 
+    ?>
