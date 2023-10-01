@@ -39,11 +39,11 @@ $result = $db->query($sql);
                     <label for="classFilter">Filter by Class:</label>
                     <select id="classFilter">
                         <option value="all">All Classes</option>
-                        <option value="1">Class 1</option>
-                        <option value="2">Class 2</option>
-                        <option value="3">Class 3</option>
-                        <option value="4">Class 4</option>
-                        <option value="5">Class 5</option>
+                        <option value="1"> 1</option>
+                        <option value="2"> 2</option>
+                        <option value="3"> 3</option>
+                        <option value="4"> 4</option>
+                        <option value="5"> 5</option>
                     </select>
                 </div>
                 <table class="table table-striped bg-white">
@@ -92,7 +92,7 @@ $result = $db->query($sql);
                 var classValue = classCell.textContent;
 
                 // Check if the class matches the selected class or if "All Classes" is selected
-                var shouldDisplay = (selectedClass === "all" || classValue === "Class " + selectedClass);
+                var shouldDisplay = (selectedClass === "all" || classValue === "Class" + selectedClass);
 
                 // Set the display style accordingly
                 row.style.display = shouldDisplay ? "" : "none";

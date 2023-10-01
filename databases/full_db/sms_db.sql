@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2023 at 07:36 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 7.4.30
+-- Generation Time: Oct 01, 2023 at 10:09 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `admin_login` (
   `id` int(11) NOT NULL,
   `email` varchar(60) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin_login`
@@ -52,7 +52,7 @@ CREATE TABLE `attendance_table` (
   `st_name` varchar(255) NOT NULL,
   `st_class` varchar(255) NOT NULL,
   `status` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `attendance_table`
@@ -94,7 +94,7 @@ CREATE TABLE `books` (
   `subject` varchar(50) NOT NULL,
   `class` int(11) NOT NULL,
   `published` year(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `books`
@@ -112,7 +112,8 @@ INSERT INTO `books` (`id`, `book_name`, `subject`, `class`, `published`) VALUES
 (9, 'WordBook', 'English', 1, 2019),
 (10, 'Drawing', 'Drawing', 1, 2020),
 (11, 'Social Science', 'Science', 5, 2020),
-(12, 'Information & Communication Technology', 'ICT', 5, 2020);
+(12, 'Information & Communication Technology', 'ICT', 5, 2020),
+(13, 'mybook', 'myself', 1, 2023);
 
 -- --------------------------------------------------------
 
@@ -122,9 +123,9 @@ INSERT INTO `books` (`id`, `book_name`, `subject`, `class`, `published`) VALUES
 
 CREATE TABLE `class` (
   `c_id` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
+  `name` tinyint(4) NOT NULL,
   `c_teacher` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `class`
@@ -150,7 +151,7 @@ CREATE TABLE `exam` (
   `class` int(11) NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `exam`
@@ -184,7 +185,7 @@ CREATE TABLE `expenses` (
   `amount` int(11) NOT NULL,
   `status` varchar(50) NOT NULL,
   `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `expenses`
@@ -205,22 +206,7 @@ INSERT INTO `expenses` (`id`, `te_id`, `te_name`, `expense_type`, `amount`, `sta
 (12, 12, 'Sarah', 'salary', 15000, 'unpaid', '2023-09-22'),
 (13, 13, 'Mary', 'salary', 15000, 'paid', '2023-09-20'),
 (14, 14, 'David', 'salary', 15000, 'paid', '2023-09-22'),
-(16, 33, 'Hashem', 'Salary', 30000, 'paid', '2023-09-21');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `guide_teachers`
---
-
-CREATE TABLE `guide_teachers` (
-  `id` int(11) NOT NULL,
-  `te_name` varchar(100) NOT NULL,
-  `te_id` int(11) NOT NULL,
-  `st_id` int(11) NOT NULL,
-  `st_name` varchar(100) NOT NULL,
-  `class` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(15, 15, 'Amelia', 'salary', 15000, 'paid', '2023-09-20');
 
 -- --------------------------------------------------------
 
@@ -234,7 +220,18 @@ CREATE TABLE `notice` (
   `dob` date DEFAULT NULL,
   `posted_by` varchar(70) DEFAULT NULL,
   `details` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `notice`
+--
+
+INSERT INTO `notice` (`id`, `title`, `dob`, `posted_by`, `details`) VALUES
+(7, 'Eid Holiday', '2023-09-01', 'Mizanur Rahman', 'From 1st Sep 23 to 5th Sep 23 School will be closed due to EID.'),
+(8, 'Lorem', '2023-09-07', 'Mizanur Rahman', 'Off for HSC EXAM'),
+(9, 'Lorem', '2023-09-17', 'Mizanur Rahman', 'Holiday for SSC Exam'),
+(10, 'Result Publish date for mid-term 2023', '0000-00-00', 'Admin', 'type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset'),
+(11, 'Eid Vacation 2023', '2023-09-19', 'Principal', 'type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset');
 
 -- --------------------------------------------------------
 
@@ -250,7 +247,7 @@ CREATE TABLE `result` (
   `exam_name` varchar(50) NOT NULL,
   `marks` int(11) NOT NULL,
   `result` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `result`
@@ -277,7 +274,8 @@ INSERT INTO `result` (`id`, `st_id`, `st_name`, `st_class`, `exam_name`, `marks`
 (18, 20, 'Kamrul', 4, '', 0, ''),
 (32, 22, 'Kolimuddin', 3, 'Mid-Term', 50, ''),
 (34, 34, 'test', 5, 'Mid-Term', 45, 'pass'),
-(36, 27, 'mofiz', 2, '', 0, '');
+(36, 27, 'mofiz', 2, '', 0, ''),
+(37, 49, 'ALAUDDIN', 2, 'Mid-Term', 20, 'pass');
 
 -- --------------------------------------------------------
 
@@ -289,28 +287,28 @@ CREATE TABLE `routine` (
   `id` int(11) NOT NULL,
   `subject_name` varchar(50) NOT NULL,
   `class` int(11) NOT NULL,
-  `te_id` int(11) DEFAULT NULL,
+  `te_id` int(11) NOT NULL,
   `te_name` varchar(50) NOT NULL,
-  `time` time DEFAULT NULL,
-  `day` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `time` time NOT NULL,
+  `date` date NOT NULL,
+  `day` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `routine`
 --
 
-INSERT INTO `routine` (`id`, `subject_name`, `class`, `te_id`, `te_name`, `time`, `day`) VALUES
-(1, 'Bangla', 1, 1, 'Mark Willy', '11:30:00', 'Sunday'),
-(2, 'English', 1, 2, 'Jessia Rose', '12:00:00', 'Monday'),
-(3, 'Bangla', 3, 3, 'Umme Mahjabeen', '11:30:00', 'Sunday'),
-(4, 'English', 3, 4, 'Thomas', '12:00:00', 'Monday'),
-(5, 'Religion', 4, 5, 'Daniel', '11:30:00', 'Sunday'),
-(6, 'ICT', 4, 6, 'Martin', '12:00:00', 'Monday'),
-(7, 'Bangla', 5, 7, 'Emma', '11:30:00', 'Sunday'),
-(8, 'English', 5, 8, 'Sophia', '12:00:00', 'Monday'),
-(9, 'English 2nd paper', 1, 9, 'James', '11:30:00', 'Sunday'),
-(10, 'Drawing', 1, 10, 'William', '12:00:00', 'Monday'),
-(11, 'General Knowledge', 3, 4, 'Thomas', '00:00:00', '');
+INSERT INTO `routine` (`id`, `subject_name`, `class`, `te_id`, `te_name`, `time`, `date`, `day`) VALUES
+(1, 'Bangla', 1, 1, 'Mark Willy', '11:30:00', '2023-09-06', 'Sunday'),
+(2, 'English', 1, 2, 'Jessia Rose', '12:00:00', '2023-09-14', 'Monday'),
+(3, 'Bangla', 3, 3, 'Umme Mahjabeen', '11:30:00', '2023-09-06', 'Sunday'),
+(4, 'English', 3, 4, 'Thomas', '12:00:00', '2023-09-14', 'Monday'),
+(5, 'Religion', 4, 5, 'Daniel', '11:30:00', '2023-09-06', 'Sunday'),
+(6, 'ICT', 4, 6, 'Martin', '12:00:00', '2023-09-14', 'Monday'),
+(7, 'Bangla', 5, 7, 'Emma', '11:30:00', '2023-09-06', 'Sunday'),
+(8, 'English', 5, 8, 'Sophia', '12:00:00', '2023-09-14', 'Monday'),
+(9, 'English 2nd paper', 1, 9, 'James', '11:30:00', '2023-09-06', 'Sunday'),
+(10, 'Drawing', 1, 10, 'William', '12:00:00', '2023-09-14', 'Monday');
 
 -- --------------------------------------------------------
 
@@ -321,14 +319,14 @@ INSERT INTO `routine` (`id`, `subject_name`, `class`, `te_id`, `te_name`, `time`
 CREATE TABLE `students` (
   `s_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `class` tinyint(4) NOT NULL,
+  `class` int(11) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `dob` date NOT NULL,
   `address` varchar(100) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `students`
@@ -342,18 +340,9 @@ INSERT INTO `students` (`s_id`, `name`, `class`, `gender`, `dob`, `address`, `ph
 (5, 'Jahin Anam', 5, 'Male', '1997-07-17', 'Narayanganj', '987 4562 1234', 'jahin@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
 (6, 'David', 1, 'Male', '2023-09-03', 'England', '(123) 456 7890', 'da@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
 (7, 'Mehedi Hasan', 2, 'Male', '2023-09-01', 'Kakrail', '456 789 0000', 'shuvo@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
-(10, 'Ahad', 4, 'Male', '2023-09-14', 'Dhaka', '123456', 'ab@gmail.com', ''),
-(11, 'Ikbal', 5, 'Male', '2023-09-14', 'Dhaka', '123456', 'ac@gmail.com', ''),
-(12, 'Shuvo', 1, 'Male', '2023-09-14', 'Dhaka', '123456', 'ad@gmail.com', ''),
-(13, 'Sadid', 2, 'Male', '2023-09-14', 'Dhaka', '123456', 'ae@gmail.com', ''),
-(14, 'Mamun', 3, 'Male', '2023-09-14', 'Dhaka', '123456', 'af@gmail.com', ''),
-(15, 'Masum', 4, 'Male', '2023-09-14', 'Dhaka', '123456', 'ag@gmail.com', ''),
-(16, 'Rayhan', 5, 'Male', '2023-09-14', 'Dhaka', '123456', 'ah@gmail.com', ''),
-(17, 'Nadia', 1, 'Female', '2023-09-14', 'Dhaka', '123456', 'ai@gmail.com', ''),
-(18, 'Alauddin', 2, 'Male', '2023-09-14', 'Dhaka', '123456', 'aj@gmail.com', ''),
-(19, 'Rojoni', 3, 'Male', '2023-09-14', 'Dhaka', '123456', 'ak@gmail.com', ''),
-(20, 'Kamrul', 4, 'Male', '2023-09-14', 'Dhaka', '123456', 'al@gmail.com', ''),
-(27, 'mofiz', 2, 'male', '2023-09-14', 'asdasd', '01555', 'asd@aaa.com', '');
+(8, 'ALAUDDIN quasemi', 3, 'Male', '2023-09-06', 'jugatola', '1500', 'helo@gelo.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'),
+(19, 'Abul ', 2, 'male', '2023-09-14', 'asdad', '01555', 'efffg@gmail.com', '123'),
+(20, 'Abul ', 2, 'male', '2023-09-14', 'asdad', '01555', 'eggfg@gmail.com', '123');
 
 --
 -- Triggers `students`
@@ -365,10 +354,19 @@ CREATE TRIGGER `result_students_insert` AFTER INSERT ON `students` FOR EACH ROW 
 	st_class = NEW.class
 $$
 DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `student_delete_trigger` AFTER DELETE ON `students` FOR EACH ROW DELETE FROM student_fees_collection WHERE st_id = OLD.s_id
-$$
-DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `student_class_view`
+-- (See below for the actual view)
+--
+CREATE TABLE `student_class_view` (
+`s_id` int(11)
+,`student_name` varchar(50)
+,`s_class` int(11)
+,`c_name` tinyint(4)
+);
 
 -- --------------------------------------------------------
 
@@ -382,35 +380,43 @@ CREATE TABLE `student_fees_collection` (
   `st_name` varchar(100) NOT NULL,
   `class` int(11) NOT NULL,
   `expense_type` varchar(50) NOT NULL,
+  `month` varchar(10) NOT NULL,
   `amount` int(11) NOT NULL,
+  `paid` int(11) NOT NULL,
+  `due` int(11) NOT NULL,
   `status` varchar(50) NOT NULL,
   `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `student_fees_collection`
 --
 
-INSERT INTO `student_fees_collection` (`id`, `st_id`, `st_name`, `class`, `expense_type`, `amount`, `status`, `date`) VALUES
-(1, 1, 'Mizanur Rahman', 2, 'exam fee', 1500, 'paid', '2023-09-08'),
-(2, 2, 'K.A Rayhan', 3, 'exam fee', 1500, 'unpaid', '2023-09-14'),
-(3, 3, 'Masum Hossain', 1, 'exam fee', 1500, 'paid', '2023-09-08'),
-(4, 4, 'Ahad Rahman', 4, 'exam fee', 1500, 'unpaid', '2023-09-14'),
-(5, 5, 'Jahin Anam', 5, 'exam fee', 1500, 'paid', '2023-09-08'),
-(6, 6, 'David', 1, 'exam fee', 1500, 'unpaid', '2023-09-14'),
-(7, 7, 'Mehedi Hasan', 2, 'exam fee', 1500, 'paid', '2023-09-08'),
-(8, 10, 'Ahad', 4, 'exam fee', 1500, 'unpaid', '2023-09-14'),
-(9, 11, 'Ikbal', 5, 'exam fee', 1500, 'paid', '2023-09-08'),
-(10, 12, 'K.A Rayhan', 1, 'exam fee', 1500, 'unpaid', '2023-09-14'),
-(11, 13, 'Sadid', 2, 'exam fee', 1500, 'paid', '2023-09-08'),
-(12, 14, 'Mamun', 3, 'exam fee', 1500, 'unpaid', '2023-09-14'),
-(13, 15, 'Masum', 4, 'exam fee', 1500, 'paid', '2023-09-08'),
-(14, 16, 'K.A Rayhan', 5, 'exam fee', 1500, 'unpaid', '2023-09-14'),
-(15, 17, 'Nadia', 1, 'exam fee', 1500, 'paid', '2023-09-08'),
-(16, 18, 'Alauddin', 2, 'exam fee', 1500, 'unpaid', '2023-09-14'),
-(17, 19, 'Rojoni', 3, 'exam fee', 1500, 'paid', '2023-09-08'),
-(18, 20, 'Kamrul', 4, 'exam fee', 1500, 'unpaid', '2023-09-14'),
-(21, 33, 'TestyTreat', 1, 'Exam', 2000, 'paid', '2023-09-21');
+INSERT INTO `student_fees_collection` (`id`, `st_id`, `st_name`, `class`, `expense_type`, `month`, `amount`, `paid`, `due`, `status`, `date`) VALUES
+(1, 1, 'Mizanur Rahman', 2, 'exam fee', 'Jan', 1500, 1500, 0, 'paid', '2023-09-08'),
+(2, 2, 'K.A Rayhan', 3, 'Tution Fee', 'Jan', 3000, 2000, 1000, 'due', '2023-09-14'),
+(3, 3, 'Masum Hossain', 1, 'exam fee', 'Jan', 1500, 1500, 0, 'paid', '2023-09-08'),
+(4, 4, 'Ahad Rahman', 4, 'exam fee', 'Feb', 1500, 1000, 500, 'due', '2023-09-14'),
+(5, 5, 'Jahin Anam', 5, 'exam fee', 'Feb', 1500, 1500, 0, 'paid', '2023-09-08'),
+(6, 6, 'David', 1, 'exam fee', 'March', 1500, 1300, 200, 'due', '2023-09-14'),
+(7, 7, 'Mehedi Hasan', 2, 'exam fee', 'March', 1500, 1500, 0, 'paid', '2023-09-08'),
+(8, 10, 'Ahad', 4, 'exam fee', 'April', 1500, 1300, 200, 'due', '2023-09-14'),
+(9, 11, 'Ikbal', 5, 'exam fee', 'April', 1500, 1500, 0, 'paid', '2023-09-08'),
+(10, 12, 'K.A Rayhan', 1, 'exam fee', 'Jan', 1500, 1300, 200, 'due', '2023-09-14'),
+(11, 13, 'Sadid', 2, 'exam fee', 'Jan', 1500, 1500, 0, 'paid', '2023-09-08'),
+(12, 14, 'Mamun', 3, 'exam fee', 'Jan', 1500, 1300, 200, 'due', '2023-09-14'),
+(13, 15, 'Masum', 4, 'exam fee', 'Jan', 1500, 1500, 0, 'paid', '2023-09-08'),
+(14, 16, 'K.A Rayhan', 5, 'exam fee', 'Jan', 1500, 1300, 200, 'due', '2023-09-14'),
+(15, 17, 'Nadia', 1, 'exam fee', 'Jan', 1500, 1500, 0, 'paid', '2023-09-08'),
+(16, 18, 'Alauddin', 2, 'exam fee', 'Jan', 1500, 1300, 200, 'due', '2023-09-14'),
+(17, 19, 'Rojoni', 3, 'exam fee', 'Jan', 1500, 1500, 0, 'paid', '2023-09-08'),
+(18, 20, 'Kamrul', 4, 'exam fee', 'Jan', 1500, 1300, 200, 'due', '2023-09-14'),
+(19, 21, 'Mahidul', 5, 'exam fee', 'Jan', 1500, 1500, 0, 'paid', '2023-09-08'),
+(20, 22, 'Imran', 1, 'exam fee', 'Jan', 1500, 1300, 200, 'due', '2023-09-14'),
+(21, 35, 'kuddus', 5, 'Tution', '', 0, 0, 0, 'paid', '2023-09-01'),
+(22, 35, 'kuddus', 5, 'Tution', '', 0, 0, 0, 'paid', '2023-09-01'),
+(23, 35, 'kuddus', 1, 'Tution', '', 3000, 3000, 0, 'paid', '2023-09-01'),
+(24, 35, 'kuddus', 1, 'Exam', 'March', 3000, 3000, 0, 'paid', '2023-09-28');
 
 -- --------------------------------------------------------
 
@@ -426,7 +432,7 @@ CREATE TABLE `teachers` (
   `phone` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `teachers`
@@ -446,15 +452,17 @@ INSERT INTO `teachers` (`t_id`, `name`, `gender`, `address`, `phone`, `email`, `
 (11, 'Soha', 'Female', 'Sylhet', '456 789 0000', 'sh@gmail.com', '40bd001563085fc35165'),
 (12, 'Sarah', 'Female', 'Dhaka', '456 789 0000', 'sr@gmail.com', '40bd001563085fc35165'),
 (13, 'Mary', 'Female', 'Dhaka', '456 789 0000', 'ma@gmail.com', '40bd001563085fc35165'),
-(14, 'David', 'Male', 'Chandpur', '654 789 6543', 'dd@gmail.com', '40bd001563085fc35165');
+(14, 'David', 'Male', 'Chandpur', '654 789 6543', 'dd@gmail.com', '40bd001563085fc35165'),
+(15, 'Amelia', 'Female', 'Bhola', '456 789 0000', 'am@gmail.com', '40bd001563085fc35165');
+
+-- --------------------------------------------------------
 
 --
--- Triggers `teachers`
+-- Structure for view `student_class_view`
 --
-DELIMITER $$
-CREATE TRIGGER `teacher_delete_after` AFTER DELETE ON `teachers` FOR EACH ROW DELETE FROM expenses WHERE te_id = OLD.t_id
-$$
-DELIMITER ;
+DROP TABLE IF EXISTS `student_class_view`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `student_class_view`  AS SELECT `students`.`s_id` AS `s_id`, `students`.`name` AS `student_name`, `students`.`class` AS `s_class`, `class`.`name` AS `c_name` FROM (`students` join `class`) WHERE `students`.`class` = `class`.`name``name`  ;
 
 --
 -- Indexes for dumped tables
@@ -495,12 +503,6 @@ ALTER TABLE `exam`
 -- Indexes for table `expenses`
 --
 ALTER TABLE `expenses`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `guide_teachers`
---
-ALTER TABLE `guide_teachers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -561,7 +563,7 @@ ALTER TABLE `attendance_table`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `class`
@@ -579,43 +581,37 @@ ALTER TABLE `exam`
 -- AUTO_INCREMENT for table `expenses`
 --
 ALTER TABLE `expenses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `guide_teachers`
---
-ALTER TABLE `guide_teachers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `notice`
 --
 ALTER TABLE `notice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `result`
 --
 ALTER TABLE `result`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `routine`
 --
 ALTER TABLE `routine`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `student_fees_collection`
 --
 ALTER TABLE `student_fees_collection`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `teachers`
