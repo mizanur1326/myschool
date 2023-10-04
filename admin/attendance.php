@@ -10,9 +10,8 @@ $result = $db->query($sql);
         height: 450px;
         overflow: scroll;
     }
-    #PA{
-        height: 30px;
-        font-size: 15px;
+    .attendance-radio {
+        padding: 20px;
     }
 </style>
 
@@ -27,48 +26,42 @@ $result = $db->query($sql);
             <div class="card" id="tableid">
                 <div class="card-body">
                     <h2>Take Attendance</h2>
-                    <table class="table table-striped bg-white">
-                        <thead>
-                            <tr>
-                                <th>Student ID</th>
-                                <th>Student Name</th>
-                                <th>Student Class</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php while ($row = $result->fetch_assoc()) { ?>
+                    <form method="post" action="process_attendance.php">
+                        <table class="table table-striped bg-white">
+                            <thead>
                                 <tr>
-                                    <td>
-                                        <?php echo $row["st_id"] ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row["st_name"] ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row["st_class"] ?>
-                                    </td>
-                                    <td>
-                                        <select class="form-control" name="check_AP" id="PA">
-                                            <option>Present</option>
-                                            <option>Absent</option>
-                                        </select>
-                                    </td>
-
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Student Class</th>
+                                    <th>Status</th>
                                 </tr>
-                            <?php }
-                            ; ?>
+                            </thead>
+                            <tbody>
+                                <?php while ($row = $result->fetch_assoc()) { ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo $row["st_id"] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row["st_name"] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row["st_class"] ?>
+                                        </td>
+                                        <td>
+                                            <input type="radio" class="attendance-radio" name="attendance[<?php echo $row["st_id"]; ?>]" value="Present"> Present
+                                            <input type="radio" class="attendance-radio" name="attendance[<?php echo $row["st_id"]; ?>]" value="Absent"> Absent
+                                        </td>
+                                    </tr>
+                                <?php } ?>
 
-
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-primary">Submit Attendance</button>
+                    </form>
                 </div>
 
             </div>
         </div>
-
-
-
-
 
         <?php include_once("../includes/index_footer.php") ?>

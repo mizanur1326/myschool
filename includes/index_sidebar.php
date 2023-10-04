@@ -80,7 +80,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link"><i class="fas fa-angle-right"></i>
+                            <a href="attendance_report.php" class="nav-link"><i class="fas fa-angle-right"></i>
                                 Attendance Report</a>
                         </li>
                     </ul>
