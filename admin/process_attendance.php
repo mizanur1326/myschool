@@ -17,8 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Attendance has been successfully recorded
-        $message = "Attendance has been successfully recorded.";
-
+        $message = "Attendance has been successfully recorded."; 
+        header("Location:attendance_report.php");
     } else {
         // No attendance data received
         $message = "No attendance data received. Please make sure to select attendance for students.";
@@ -32,21 +32,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Output the message to the user
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Process</title>
-    <!-- Add your CSS styles here if needed -->
-</head>
-
-<body>
-    <h1>Attendance Process Result</h1>
-    <p><?php echo $message; ?></p>
-
-    <!-- Add any additional content or links here if needed -->
-</body>
-
-</html>
