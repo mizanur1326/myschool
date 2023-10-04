@@ -39,7 +39,7 @@ $db->close();
     <h1>Attendance Report</h1>
 
     <?php if (!empty($attendanceData)) { ?>
-        <table>
+    <table>
     <thead>
         <tr>
             <th>Student ID</th>

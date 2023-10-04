@@ -10,6 +10,7 @@ $result = $db->query($sql);
         height: 450px;
         overflow: scroll;
     }
+
     .attendance-radio {
         padding: 20px;
     }

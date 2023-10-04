@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2023 at 09:37 AM
+-- Generation Time: Oct 04, 2023 at 11:30 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -41,12 +41,14 @@ CREATE TABLE `attendance_record` (
 --
 
 INSERT INTO `attendance_record` (`id`, `student_id`, `st_class`, `attendance_date`, `status`, `created_at`) VALUES
-(1, 1, 0, '2023-10-04', 'Present', '2023-10-04 07:36:01'),
-(2, 2, 0, '2023-10-04', 'Present', '2023-10-04 07:36:01'),
-(3, 4, 0, '2023-10-04', 'Present', '2023-10-04 07:36:01'),
-(4, 5, 0, '2023-10-04', 'Absent', '2023-10-04 07:36:01'),
-(5, 6, 0, '2023-10-04', 'Absent', '2023-10-04 07:36:01'),
-(6, 7, 0, '2023-10-04', 'Absent', '2023-10-04 07:36:01');
+(1, 1, 0, '2023-10-04', 'Present', '2023-10-04 09:29:34'),
+(2, 2, 0, '2023-10-04', 'Present', '2023-10-04 09:29:34'),
+(3, 3, 0, '2023-10-04', 'Absent', '2023-10-04 09:29:34'),
+(4, 5, 0, '2023-10-04', 'Present', '2023-10-04 09:29:34'),
+(5, 6, 0, '2023-10-04', 'Absent', '2023-10-04 09:29:34'),
+(6, 7, 0, '2023-10-04', 'Absent', '2023-10-04 09:29:34'),
+(7, 10, 0, '2023-10-04', 'Present', '2023-10-04 09:29:34'),
+(8, 12, 0, '2023-10-04', 'Absent', '2023-10-04 09:29:34');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +68,7 @@ ALTER TABLE `attendance_record`
 -- AUTO_INCREMENT for table `attendance_record`
 --
 ALTER TABLE `attendance_record`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
